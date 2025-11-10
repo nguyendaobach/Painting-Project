@@ -9,9 +9,9 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Jordan Casteel - Contemporary Artist",
+  title: "Minh Doan",
   description:
-    "Jordan Casteel is a contemporary artist known for vibrant paintings exploring domestic life, color, and light.",
+    "Minh Doan is a contemporary visual artist whose work explores the intersection of abstraction, color, and geometric forms.",
   generator: "v0.app",
 }
 

@@ -548,10 +548,14 @@ export default function Home() {
               <div className="space-y-6 max-w-xl">
                 <h2 className="text-2xl font-light">About</h2>
                 <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-                  Minh Doan.
+                  Minh Doan is a contemporary visual artist whose work explores the intersection of abstraction, 
+                  color, and geometric forms. Through vibrant compositions and dynamic use of space, the work 
+                  invites viewers into a dialogue between structure and spontaneity.
                 </p>
                 <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-                  Minh Doan.
+                  Working primarily in oil on canvas, Minh creates pieces that balance bold color palettes 
+                  with intricate layering, resulting in artworks that are both visually striking and 
+                  emotionally resonant.
                 </p>
               </div>
             )}
@@ -563,17 +567,17 @@ export default function Home() {
                   <p>
                     <span className="font-medium">Email:</span>{" "}
                     <a
-                      href="mailto:minhdoan@gmail.com"
+                      href="mailto:contact@minhdoan.art"
                       className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white"
                     >
-                      minhdoan@gmail.com
+                      contact@minhdoan.art
                     </a>
                   </p>
                   <p>
-                    <span className="font-medium">Studio:</span> New York, NY
+                    <span className="font-medium">Studio:</span> Hanoi, Vietnam
                   </p>
                   <p>
-                    <span className="font-medium">Representation:</span> Gallery Name
+                    <span className="font-medium">Inquiries:</span> Available for commissions and exhibitions
                   </p>
                 </div>
               </div>
