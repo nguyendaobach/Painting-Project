@@ -1,12 +1,12 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { ArrowLeft, Moon, Sun, ChevronDown, X } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
 
-export default function PaintingsPage() {
+function PaintingsContent() {
   const [mounted, setMounted] = useState(false)
   const [selectedYear, setSelectedYear] = useState<string | null>(null)
   const [isYearDropdownOpen, setIsYearDropdownOpen] = useState(false)
@@ -376,5 +376,13 @@ export default function PaintingsPage() {
       </div>
     )}
   </>
+  )
+}
+
+export default function PaintingsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white dark:bg-neutral-950" />}>
+      <PaintingsContent />
+    </Suspense>
   )
 }
