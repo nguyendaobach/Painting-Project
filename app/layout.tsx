@@ -41,6 +41,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`font-sans antialiased`}>
+        <div className="rainbow-bg">
+          {Array.from({ length: 25 }).map((_, i) => (
+            <div key={i} className="rainbow"></div>
+          ))}
+          <div className="h"></div>
+          <div className="v"></div>
+        </div>
         <ThemeProvider>{children}</ThemeProvider>
         <Analytics />
       </body>

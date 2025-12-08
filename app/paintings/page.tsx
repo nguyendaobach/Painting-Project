@@ -27,53 +27,12 @@ function PaintingsContent() {
   }
 
   const years = [
-    { year: "2025", count: 5 },
     { year: "2024", count: 6 },
     { year: "2023", count: 10 },
     { year: "2022", count: 3 },
   ]
 
   const allArtworks = [
-    {
-      id: 1,
-      title: "009",
-      medium: "Oil on canvas",
-      dimensions: "84 × 76 inches",
-      year: 2025,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748875/009_vxftes.jpg",
-    },
-    {
-      id: 2,
-      title: "062",
-      medium: "Oil on canvas",
-      dimensions: "80 × 72 inches",
-      year: 2025,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748875/062_jd4xye.jpg",
-    },
-    {
-      id: 3,
-      title: "006",
-      medium: "Oil on canvas",
-      dimensions: "82 × 74 inches",
-      year: 2025,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748875/006_trqdvi.jpg",
-    },
-    {
-      id: 4,
-      title: "060",
-      medium: "Oil on canvas",
-      dimensions: "78 × 70 inches",
-      year: 2025,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748876/060_qlzhik.jpg",
-    },
-    {
-      id: 5,
-      title: "005",
-      medium: "Oil on canvas",
-      dimensions: "80 × 72 inches",
-      year: 2025,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748875/005_ve5spp.jpg",
-    },
     {
       id: 6,
       title: "Oral History and Written History",
@@ -275,16 +234,6 @@ function PaintingsContent() {
 
           {/* Year Filter */}
           <div className="mt-6 flex items-center gap-3 flex-wrap">
-            <button
-              onClick={() => setSelectedYear(null)}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                !selectedYear
-                  ? "bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900"
-                  : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700"
-              }`}
-            >
-              All
-            </button>
             {years.map((yearItem) => (
               <button
                 key={yearItem.year}
@@ -298,6 +247,16 @@ function PaintingsContent() {
                 {yearItem.year}
               </button>
             ))}
+            <button
+              onClick={() => setSelectedYear(null)}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                !selectedYear
+                  ? "bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900"
+                  : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700"
+              }`}
+            >
+              All
+            </button>
           </div>
         </div>
       </header>

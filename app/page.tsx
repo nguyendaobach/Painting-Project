@@ -2,22 +2,23 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Moon, Sun, ChevronLeft, ChevronRight } from "lucide-react"
+import { Moon, Sun, ChevronLeft, ChevronRight, X } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [selectedImage, setSelectedImage] = useState<typeof artworks[0] | null>(null)
   const { theme, toggleTheme } = useTheme()
 
-  // Navigation items ordered from right to left as shown in wireframe
+  // Navigation items ordered from left to right (1-6)
   const navigationItems = [
-    { label: "Contact", href: "/contact", id: "contact" },
-    { label: "About", href: "/about", id: "about" },
-    { label: "Archives", href: "/archives", id: "archives" },
-    { label: "Sculptures", href: "/sculptures", id: "sculptures" },
-    { label: "Paintings", href: "/paintings", id: "paintings" },
     { label: "Selected Works", href: "/selected-works", id: "selected" },
+    { label: "Paintings", href: "/paintings", id: "paintings" },
+    { label: "Sculptures", href: "/sculptures", id: "sculptures" },
+    { label: "Archives", href: "/archives", id: "archives" },
+    { label: "About", href: "/about", id: "about" },
+    { label: "Contact", href: "/contact", id: "contact" },
   ]
 
   const artworks = [
@@ -309,7 +310,8 @@ export default function Home() {
             key={currentIndex}
             src={currentArtwork?.image || "/placeholder.svg"}
             alt={currentArtwork?.title}
-            className="max-h-full w-auto object-contain animate-fadeIn"
+            className="max-h-full w-auto object-contain animate-fadeIn cursor-pointer hover:opacity-90 transition-opacity"
+            onClick={() => setSelectedImage(currentArtwork)}
           />
         </div>
 
@@ -361,6 +363,53 @@ export default function Home() {
           animation: fadeIn 0.3s ease-out;
         }
       `}</style>
+
+      {/* Modal for full image view */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-6 right-6 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            aria-label="Close"
+          >
+            <X size={24} className="text-white" />
+          </button>
+
+          <div className="max-w-6xl w-full" onClick={(e) => e.stopPropagation()}>
+            <div className="grid md:grid-cols-[1fr,300px] gap-8 items-start">
+              {/* Image */}
+              <div className="relative">
+                <img
+                  src={selectedImage.image}
+                  alt={selectedImage.title}
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+
+              {/* Details */}
+              <div className="text-white space-y-4">
+                <div>
+                  <h2 className="text-3xl font-light mb-2">{selectedImage.title}</h2>
+                  <p className="text-neutral-400">{selectedImage.year}</p>
+                </div>
+                <div className="space-y-2 text-sm">
+                  <p>
+                    <span className="text-neutral-500">Medium:</span>{" "}
+                    <span className="text-neutral-300">{selectedImage.medium}</span>
+                  </p>
+                  <p>
+                    <span className="text-neutral-500">Dimensions:</span>{" "}
+                    <span className="text-neutral-300">{selectedImage.dimensions}</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
