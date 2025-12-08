@@ -9,10 +9,28 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Minh Doan",
+  title: "Minh Doan - Contemporary Artist",
   description:
     "Minh Doan is a contemporary visual artist whose work explores the intersection of abstraction, color, and geometric forms.",
-  generator: "v0.app",
+  openGraph: {
+    title: "Minh Doan - Contemporary Artist",
+    description:
+      "Minh Doan is a contemporary visual artist whose work explores the intersection of abstraction, color, and geometric forms.",
+    url: "https://painting-project-theta.vercel.app",
+    siteName: "Minh Doan Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Minh Doan - Contemporary Artist",
+    description:
+      "Minh Doan is a contemporary visual artist whose work explores the intersection of abstraction, color, and geometric forms.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({

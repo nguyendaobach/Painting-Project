@@ -2,25 +2,38 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Moon, Sun, ChevronLeft, ChevronRight } from "lucide-react"
+import { useSearchParams } from "next/navigation"
+import { ArrowLeft, Moon, Sun, ChevronDown, X } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
 
-export default function Home() {
+export default function PaintingsPage() {
   const [mounted, setMounted] = useState(false)
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [selectedYear, setSelectedYear] = useState<string | null>(null)
+  const [isYearDropdownOpen, setIsYearDropdownOpen] = useState(false)
+  const [selectedImage, setSelectedImage] = useState<typeof allArtworks[0] | null>(null)
   const { theme, toggleTheme } = useTheme()
+  const searchParams = useSearchParams()
 
-  // Navigation items ordered from right to left as shown in wireframe
-  const navigationItems = [
-    { label: "Contact", href: "/contact", id: "contact" },
-    { label: "About", href: "/about", id: "about" },
-    { label: "Archives", href: "/archives", id: "archives" },
-    { label: "Sculptures", href: "/sculptures", id: "sculptures" },
-    { label: "Paintings", href: "/paintings", id: "paintings" },
-    { label: "Selected Works", href: "/selected-works", id: "selected" },
+  useEffect(() => {
+    setMounted(true)
+    const yearParam = searchParams.get("year")
+    if (yearParam) {
+      setSelectedYear(yearParam)
+    }
+  }, [searchParams])
+
+  if (!mounted) {
+    return null
+  }
+
+  const years = [
+    { year: "2025", count: 5 },
+    { year: "2024", count: 6 },
+    { year: "2023", count: 10 },
+    { year: "2022", count: 3 },
   ]
 
-  const artworks = [
+  const allArtworks = [
     {
       id: 1,
       title: "009",
@@ -223,144 +236,145 @@ export default function Home() {
     },
   ]
 
-  const currentArtwork = artworks[currentIndex]
-
-  const nextArtwork = () => {
-    setCurrentIndex((prev) => (prev + 1) % artworks.length)
-  }
-
-  const prevArtwork = () => {
-    setCurrentIndex((prev) => (prev - 1 + artworks.length) % artworks.length)
-  }
-
-  const goToArtwork = (index: number) => {
-    setCurrentIndex(index)
-  }
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  // Keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowLeft") {
-        setCurrentIndex((prev) => (prev - 1 + artworks.length) % artworks.length)
-      }
-      if (e.key === "ArrowRight") {
-        setCurrentIndex((prev) => (prev + 1) % artworks.length)
-      }
-    }
-    window.addEventListener("keydown", handleKeyDown)
-    return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [artworks.length])
-
-  if (!mounted) {
-    return null
-  }
+  const displayedArtworks = selectedYear
+    ? allArtworks.filter((artwork) => artwork.year.toString() === selectedYear)
+    : allArtworks
 
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-neutral-950 text-black dark:text-white transition-colors duration-500 overflow-hidden">
-      {/* Header with Navigation */}
-      <header className="border-b border-neutral-200/50 dark:border-neutral-800/50 bg-white dark:bg-neutral-950">
-        <div className="container mx-auto px-6 lg:px-12 py-4">
+    <>
+      <div className="min-h-screen bg-white dark:bg-neutral-950 text-black dark:text-white transition-colors duration-500">
+        {/* Header */}
+        <header className="border-b border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950">
+        <div className="container mx-auto px-6 lg:px-12 py-6">
           <div className="flex items-center justify-between">
-            {/* Left: Artist name */}
-            <Link href="/" className="group">
-              <h1 className="text-lg md:text-xl font-light tracking-tight group-hover:text-neutral-600 dark:group-hover:text-neutral-400 transition-colors">
-                Minh Doan
+            <div className="flex items-center gap-6">
+              <Link
+                href="/"
+                className="flex items-center gap-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors group"
+              >
+                <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+                <span className="text-sm font-medium">Back</span>
+              </Link>
+              <h1 className="text-2xl md:text-3xl font-light tracking-tight">
+                Paintings
               </h1>
-            </Link>
+            </div>
             
-            {/* Center: Navigation */}
-            <nav className="hidden lg:flex items-center gap-1">
-              {navigationItems.map((item) => (
-                <Link
-                  key={item.id}
-                  href={item.href}
-                  className="px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/50 rounded-lg transition-all duration-200"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-            
-            {/* Right: Theme toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300"
+              className="p-3 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300"
               aria-label="Toggle theme"
             >
               {theme === "light" ? (
-                <Moon size={18} className="text-neutral-700" />
+                <Moon size={20} className="text-neutral-700" />
               ) : (
-                <Sun size={18} className="text-neutral-300" />
+                <Sun size={20} className="text-neutral-300" />
               )}
             </button>
+          </div>
+
+          {/* Year Filter */}
+          <div className="mt-6 flex items-center gap-3 flex-wrap">
+            <button
+              onClick={() => setSelectedYear(null)}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                !selectedYear
+                  ? "bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900"
+                  : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700"
+              }`}
+            >
+              All
+            </button>
+            {years.map((yearItem) => (
+              <button
+                key={yearItem.year}
+                onClick={() => setSelectedYear(yearItem.year)}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                  selectedYear === yearItem.year
+                    ? "bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900"
+                    : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700"
+                }`}
+              >
+                {yearItem.year}
+              </button>
+            ))}
           </div>
         </div>
       </header>
 
-      {/* Main Content - Simple centered image */}
-      <main className="flex-1 flex flex-col items-center justify-center relative bg-neutral-50 dark:bg-black px-8 py-6 overflow-hidden">
-        {/* Large centered image - fixed height container */}
-        <div className="relative flex items-center justify-center h-[75vh] mb-6">
-          <img
-            key={currentIndex}
-            src={currentArtwork?.image || "/placeholder.svg"}
-            alt={currentArtwork?.title}
-            className="max-h-full w-auto object-contain animate-fadeIn"
-          />
-        </div>
-
-        {/* Info section below image - fixed position */}
-        <div className="w-full max-w-4xl flex items-end justify-between px-4">
-          {/* Info bottom left */}
-          <div className="text-left min-h-[60px]">
-            <h2 className="text-sm md:text-base font-medium mb-0.5">{currentArtwork?.title}</h2>
-            <p className="text-xs text-neutral-600 dark:text-neutral-400">{currentArtwork?.medium}</p>
-            <p className="text-xs text-neutral-600 dark:text-neutral-400">{currentArtwork?.year}</p>
+      {/* Main Content */}
+      <main className="container mx-auto px-6 lg:px-12 py-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Masonry Grid - Smaller items */}
+          <div className="columns-3 md:columns-4 lg:columns-5 xl:columns-6 gap-3">
+            {displayedArtworks.map((artwork) => (
+              <div
+                key={artwork.id}
+                className="break-inside-avoid mb-3"
+              >
+                <div 
+                  className="group cursor-pointer"
+                  onClick={() => setSelectedImage(artwork)}
+                >
+                  <div className="relative overflow-hidden rounded bg-neutral-100 dark:bg-neutral-900">
+                    <img
+                      src={artwork.image}
+                      alt={artwork.title}
+                      className="w-full h-auto object-cover hover:opacity-90 transition-opacity duration-300"
+                    />
+                  </div>
+                  <div className="mt-1.5 px-0.5">
+                    <p className="text-xs font-medium text-neutral-900 dark:text-neutral-100 line-clamp-1">
+                      {artwork.title}
+                    </p>
+                    <p className="text-[10px] text-neutral-500 dark:text-neutral-400">
+                      {artwork.year}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
 
-          {/* Counter bottom right */}
-          <div className="text-right">
-            <p className="text-xs text-neutral-600 dark:text-neutral-400">
-              {currentIndex + 1} / {artworks.length}
-            </p>
-          </div>
+          {displayedArtworks.length === 0 && (
+            <div className="text-center py-20">
+              <p className="text-neutral-500 dark:text-neutral-400">No artworks found for this year</p>
+            </div>
+          )}
         </div>
-
-        {/* Navigation Arrows - Simple */}
-        <button
-          onClick={prevArtwork}
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 hover:bg-neutral-100 dark:hover:bg-neutral-900 rounded-full transition-colors"
-          aria-label="Previous artwork"
-        >
-          <ChevronLeft size={24} className="text-neutral-700 dark:text-neutral-300" />
-        </button>
-
-        <button
-          onClick={nextArtwork}
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 hover:bg-neutral-100 dark:hover:bg-neutral-900 rounded-full transition-colors"
-          aria-label="Next artwork"
-        >
-          <ChevronRight size={24} className="text-neutral-700 dark:text-neutral-300" />
-        </button>
       </main>
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.3s ease-out;
-        }
-      `}</style>
     </div>
+
+    {/* Fullscreen Image Modal */}
+    {selectedImage && (
+      <div 
+        className="fixed inset-0 z-50 bg-white dark:bg-neutral-950 flex items-center justify-center p-4"
+        onClick={() => setSelectedImage(null)}
+      >
+        <button
+          onClick={() => setSelectedImage(null)}
+          className="absolute top-4 right-4 p-2 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 text-neutral-900 dark:text-white transition-colors z-10"
+          aria-label="Close"
+        >
+          <X size={24} />
+        </button>
+        
+        <div className="max-w-7xl max-h-full flex flex-col items-center justify-center gap-4">
+          <img
+            src={selectedImage.image}
+            alt={selectedImage.title}
+            className="max-w-full max-h-[85vh] w-auto h-auto object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <div className="text-center text-neutral-900 dark:text-white" onClick={(e) => e.stopPropagation()}>
+            <h3 className="text-xl font-medium mb-2">{selectedImage.title}</h3>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">{selectedImage.medium}</p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">{selectedImage.dimensions}</p>
+            <p className="text-sm text-neutral-500 dark:text-neutral-500 mt-1">{selectedImage.year}</p>
+          </div>
+        </div>
+      </div>
+    )}
+  </>
   )
 }
