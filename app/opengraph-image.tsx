@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
-export const alt = 'Minh Doan - Contemporary Artist'
+export const alt = 'Minh Doan'
 export const size = {
   width: 1200,
   height: 630,
@@ -23,14 +23,10 @@ export default async function Image() {
           justifyContent: 'center',
           color: 'white',
           fontFamily: 'sans-serif',
-          gap: '20px',
         }}
       >
         <div style={{ fontWeight: 'bold', letterSpacing: '-0.05em' }}>
           Minh Doan
-        </div>
-        <div style={{ fontSize: 48, fontWeight: 'normal', opacity: 0.9 }}>
-          Contemporary Artist
         </div>
       </div>
     ),
