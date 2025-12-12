@@ -28,6 +28,8 @@ function SculpturesContent() {
 
   const years = [
     { year: "2025", count: 5 },
+    { year: "2023", count: 2 },
+    { year: "2022", count: 1 },
   ]
 
   const allArtworks = [
@@ -70,6 +72,30 @@ function SculpturesContent() {
       dimensions: "80 × 72 inches",
       year: 2025,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748875/005_ve5spp.jpg",
+    },
+    {
+      id: 6,
+      title: "Uncle X's Good Boy",
+      medium: "Sculpture",
+      dimensions: "76 × 68 inches",
+      year: 2023,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748887/Uncle_X_s_Good_Boy_dbmlum.jpg",
+    },
+    {
+      id: 7,
+      title: "New2",
+      medium: "Sculpture",
+      dimensions: "78 × 66 inches",
+      year: 2023,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748877/New2_uugnfr.jpg",
+    },
+    {
+      id: 8,
+      title: "Water buffalo",
+      medium: "glaze, and underglaze on white clay",
+      dimensions: "height 16 inches, width: 9.8 inches, length:11 inches",
+      year: 2022,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748877/My_Hometown_vy79w4.jpg",
     },
   ]
 

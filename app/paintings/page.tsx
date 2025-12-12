@@ -28,8 +28,8 @@ function PaintingsContent() {
 
   const years = [
     { year: "2024", count: 6 },
-    { year: "2023", count: 10 },
-    { year: "2022", count: 3 },
+    { year: "2023", count: 8 },
+    { year: "2022", count: 2 },
   ]
 
   const allArtworks = [
@@ -106,14 +106,6 @@ function PaintingsContent() {
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748887/Bamboo_z3btzb.jpg",
     },
     {
-      id: 15,
-      title: "Uncle X's Good Boy",
-      medium: "Oil on canvas",
-      dimensions: "76 × 68 inches",
-      year: 2023,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748887/Uncle_X_s_Good_Boy_dbmlum.jpg",
-    },
-    {
       id: 16,
       title: "This Whole War Is Bullshit",
       medium: "Oil on canvas",
@@ -162,34 +154,18 @@ function PaintingsContent() {
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748878/The_Target_udymp4.jpg",
     },
     {
-      id: 22,
-      title: "New2",
-      medium: "Oil on canvas",
-      dimensions: "78 × 66 inches",
-      year: 2023,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748877/New2_uugnfr.jpg",
-    },
-    {
-      id: 23,
-      title: "My Hometown",
-      medium: "Oil on canvas",
-      dimensions: "80 × 70 inches",
-      year: 2022,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748877/My_Hometown_vy79w4.jpg",
-    },
-    {
       id: 24,
       title: "My Table",
-      medium: "Oil on canvas",
-      dimensions: "76 × 68 inches",
+      medium: "Watercolor and gouache on paper",
+      dimensions: "10 x 13 inches",
       year: 2022,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748877/My_Table_w0ysys.jpg",
     },
     {
       id: 25,
       title: "My Kitchen",
-      medium: "Oil on canvas",
-      dimensions: "78 × 66 inches",
+      medium: "Watercolor and gouache on paper",
+      dimensions: "12 x 16 inches",
       year: 2022,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748876/My_Kitchen_a7zawj.jpg",
     },
