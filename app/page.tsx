@@ -24,7 +24,7 @@ export default function Home() {
   const artworks = [
     {
       id: 1,
-      title: "009",
+      title: "Brise-soleil",
       medium: "Sculptures",
       dimensions: "84 × 76 inches",
       year: 2025,
@@ -32,7 +32,7 @@ export default function Home() {
     },
     {
       id: 2,
-      title: "062",
+      title: "Brise-soleil",
       medium: "Sculptures",
       dimensions: "80 × 72 inches",
       year: 2025,
@@ -40,7 +40,7 @@ export default function Home() {
     },
     {
       id: 3,
-      title: "006",
+      title: "Brise-soleil",
       medium: "Sculptures",
       dimensions: "82 × 74 inches",
       year: 2025,
@@ -48,7 +48,7 @@ export default function Home() {
     },
     {
       id: 4,
-      title: "060",
+      title: "Brise-soleil",
       medium: "Sculptures",
       dimensions: "78 × 70 inches",
       year: 2025,
@@ -56,7 +56,7 @@ export default function Home() {
     },
     {
       id: 5,
-      title: "005",
+      title: "Brise-soleilc",
       medium: "Sculptures",
       dimensions: "80 × 72 inches",
       year: 2025,

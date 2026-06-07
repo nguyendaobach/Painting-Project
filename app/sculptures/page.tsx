@@ -35,7 +35,7 @@ function SculpturesContent() {
   const allArtworks = [
     {
       id: 1,
-      title: "009",
+      title: "Brise-soleil",
       medium: "Sculpture",
       dimensions: "84 × 76 inches",
       year: 2025,
@@ -43,7 +43,7 @@ function SculpturesContent() {
     },
     {
       id: 2,
-      title: "062",
+      title: "Brise-soleil",
       medium: "Sculpture",
       dimensions: "80 × 72 inches",
       year: 2025,
@@ -51,7 +51,7 @@ function SculpturesContent() {
     },
     {
       id: 3,
-      title: "006",
+      title: "Brise-soleil",
       medium: "Sculpture",
       dimensions: "82 × 74 inches",
       year: 2025,
@@ -59,7 +59,7 @@ function SculpturesContent() {
     },
     {
       id: 4,
-      title: "060",
+      title: "Brise-soleil",
       medium: "Sculpture",
       dimensions: "78 × 70 inches",
       year: 2025,
@@ -67,7 +67,7 @@ function SculpturesContent() {
     },
     {
       id: 5,
-      title: "005",
+      title: "Brise-soleil",
       medium: "Sculpture",
       dimensions: "80 × 72 inches",
       year: 2025,

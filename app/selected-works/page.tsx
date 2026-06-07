@@ -21,13 +21,13 @@ export default function SelectedWorksPage() {
     {
       id: 1,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748875/009_vxftes.jpg",
-      title: "009",
+      title: "Brise-soleil",
       year: 2025,
     },
     {
       id: 2,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748875/062_jd4xye.jpg",
-      title: "062",
+      title: "Brise-soleil",
       year: 2025,
     },
     {
