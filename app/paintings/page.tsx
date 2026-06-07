@@ -27,12 +27,69 @@ function PaintingsContent() {
   }
 
   const years = [
+    { year: "2026", count: 7 },
     { year: "2024", count: 6 },
     { year: "2023", count: 5 },
     { year: "2022", count: 6 },
   ]
 
   const allArtworks = [
+    {
+      id: 101,
+      title: "Mai Châu (Hòa Bình)",
+      medium: "oil, acrylic, and collage on wood",
+      dimensions: "50x50cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/01b71099-d0d2-4282-a03f-9bb8fffe47ee/4Finalcopy.png",
+    },
+    {
+      id: 102,
+      title: "Untitle",
+      medium: "Oil, acrylic, and fabric on canvas",
+      dimensions: "60 x 81cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/fd8a2771-e502-417a-bc4f-03dc09c5f385/7nenfreal.png",
+    },
+    {
+      id: 103,
+      title: "Late Summer",
+      medium: "Oil, and acrylic on canvas",
+      dimensions: "54 x 65cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/9ef9f6af-60c0-4886-8d87-c38ea340f25c/2nenreal.png",
+    },
+    {
+      id: 104,
+      title: "Untitle",
+      medium: "Oil, acrylic, and fabric on canvas",
+      dimensions: "54 x 65 cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/31fca27e-2b70-4706-b978-284cc3d4f7b8/6final.png",
+    },
+    {
+      id: 105,
+      title: "Early spring",
+      medium: "oil, acrylic, and collage on wood",
+      dimensions: "46x61cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/cf60515f-7f19-464b-a3d8-191308956ede/Final3nenreal.png",
+    },
+    {
+      id: 106,
+      title: "Contrast",
+      medium: "Oil, and acrylic on canvas",
+      dimensions: "54x65cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/91162681-c7fd-4a36-b835-5188e9db3980/5nenreal.png",
+    },
+    {
+      id: 107,
+      title: "Early spring",
+      medium: "oil, acrylic, and collage on wood",
+      dimensions: "46x61cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/a24bb26e-4e35-4d03-a249-4aec32b9a7ba/FinalUpIG.png",
+    },
     {
       id: 6,
       title: "Oral History and Written History",
@@ -88,6 +145,24 @@ function PaintingsContent() {
       dimensions: "9 × 12 inches",
       year: 2023,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1767021112/g_vte462.png",
+    },
+    {
+      id: 11,
+      
+      title: "Tiếng Việt(Vietnamese)",
+      medium: "Oil on wood panels",
+      dimensions: "5.4ft x 7.3 ft x 7/8",
+      year: 2024,
+      image: "https://3gudmi3d2n.ucarecd.net/9e279404-b45d-4742-a121-b3dc8d035dc1/TiengViet(Vietnamese).jpg",
+    },
+    {
+      id: 11,
+      
+      title: "Napalm Bombs",
+      medium: "Acrylic, Oil, Colored Pencils, Collage, and Colored Frog Tape on Wood Panel",
+      dimensions: "64\"x38\"x2\" (162.5cm x 96.5cm x 5cm)",
+      year: 2024,
+      image: "https://3gudmi3d2n.ucarecd.net/e0ec3498-3d43-4e56-9843-3ba4e371d9cf/Painting1.jpg",
     },
     {
       id: 13,

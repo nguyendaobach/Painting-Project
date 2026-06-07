@@ -21,7 +21,147 @@ export default function Home() {
     { label: "Contact", href: "/contact", id: "contact" },
   ]
 
+  // Selected works to display on homepage
+  const selectedArtworks = [
+    {
+      id: 101,
+      title: "Mai Châu (Hòa Bình)",
+      medium: "oil, acrylic, and collage on wood",
+      dimensions: "50x50cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/01b71099-d0d2-4282-a03f-9bb8fffe47ee/4Finalcopy.png",
+    },
+    {
+      id: 102,
+      title: "Untitle",
+      medium: "Oil, acrylic, and fabric on canvas",
+      dimensions: "60 x 81cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/fd8a2771-e502-417a-bc4f-03dc09c5f385/7nenfreal.png",
+    },
+    {
+      id: 103,
+      title: "Late Summer",
+      medium: "Oil, and acrylic on canvas",
+      dimensions: "54 x 65cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/9ef9f6af-60c0-4886-8d87-c38ea340f25c/2nenreal.png",
+    },
+    {
+      id: 104,
+      title: "Early spring",
+      medium: "oil, acrylic, and collage on wood",
+      dimensions: "46x61cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/31fca27e-2b70-4706-b978-284cc3d4f7b8/6final.png",
+    },
+    {
+      id: 105,
+      title: "Early spring",
+      medium: "oil, acrylic, and collage on wood",
+      dimensions: "46x61cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/cf60515f-7f19-464b-a3d8-191308956ede/Final3nenreal.png",
+    },
+    {
+      id: 106,
+      title: "Late Spring",
+      medium: "Oil, acrylic, and collage on wood",
+      dimensions: "46x61cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/91162681-c7fd-4a36-b835-5188e9db3980/5nenreal.png",
+    },
+    {
+      id: 107,
+      title: "Early spring",
+      medium: "oil, acrylic, and collage on wood",
+      dimensions: "46x61cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/a24bb26e-4e35-4d03-a249-4aec32b9a7ba/FinalUpIG.png",
+    },
+    {
+      id: 1,
+      title: "Brise-soleil",
+      medium: "Sculptures",
+      dimensions: "84 × 76 inches",
+      year: 2025,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748875/009_vxftes.jpg",
+    },
+    {
+      id: 8,
+      title: "Boeing",
+      medium: "Oil on canvas",
+      dimensions: "s",
+      year: 2024,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748891/Boeing_thom1l.jpg",
+    },{
+      id: 11,
+      
+      title: "Napalm Bombs",
+      medium: "Acrylic, Oil, Colored Pencils, Collage, and Colored Frog Tape on Wood Panel",
+      dimensions: "64\"x38\"x2\" (162.5cm x 96.5cm x 5cm)",
+      year: 2024,
+      image: "https://3gudmi3d2n.ucarecd.net/e0ec3498-3d43-4e56-9843-3ba4e371d9cf/Painting1.jpg",
+    },
+  ]
+
   const artworks = [
+    {
+      id: 101,
+      title: "Mai Châu (Hòa Bình)",
+      medium: "oil, acrylic, and collage on wood",
+      dimensions: "50x50cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/01b71099-d0d2-4282-a03f-9bb8fffe47ee/4Finalcopy.png",
+    },
+    {
+      id: 102,
+      title: "Untitle",
+      medium: "Oil, acrylic, and fabric on canvas",
+      dimensions: "60 x 81cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/fd8a2771-e502-417a-bc4f-03dc09c5f385/7nenfreal.png",
+    },
+    {
+      id: 103,
+      title: "Late Summer",
+      medium: "Oil, and acrylic on canvas",
+      dimensions: "54 x 65cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/9ef9f6af-60c0-4886-8d87-c38ea340f25c/2nenreal.png",
+    },
+    {
+      id: 104,
+      title: "Early spring",
+      medium: "oil, acrylic, and collage on wood",
+      dimensions: "46x61cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/31fca27e-2b70-4706-b978-284cc3d4f7b8/6final.png",
+    },
+    {
+      id: 105,
+      title: "Early spring",
+      medium: "oil, acrylic, and collage on wood",
+      dimensions: "46x61cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/cf60515f-7f19-464b-a3d8-191308956ede/Final3nenreal.png",
+    },
+    {
+      id: 106,
+      title: "Late Spring",
+      medium: "Oil, acrylic, and collage on wood",
+      dimensions: "46x61cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/91162681-c7fd-4a36-b835-5188e9db3980/5nenreal.png",
+    },
+    {
+      id: 107,
+      title: "Early spring",
+      medium: "oil, acrylic, and collage on wood",
+      dimensions: "46x61cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/a24bb26e-4e35-4d03-a249-4aec32b9a7ba/FinalUpIG.png",
+    },
     {
       id: 1,
       title: "Brise-soleil",
@@ -55,38 +195,6 @@ export default function Home() {
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748876/060_qlzhik.jpg",
     },
     {
-      id: 5,
-      title: "Brise-soleilc",
-      medium: "Sculptures",
-      dimensions: "80 × 72 inches",
-      year: 2025,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748875/005_ve5spp.jpg",
-    },
-    {
-      id: 6,
-      title: "Oral History and Written History",
-      medium: "Oil on canvas",
-      dimensions: "84 × 76 inches",
-      year: 2024,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748895/Oral_History_and_Written_History_vdxb2v.jpg",
-    },
-    {
-      id: 7,
-      title: "B52",
-      medium: "Oil on canvas",
-      dimensions: "80 × 72 inches",
-      year: 2024,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748889/B52_l9qij3.jpg",
-    },
-    {
-      id: 8,
-      title: "Boeing",
-      medium: "Oil on canvas",
-      dimensions: "78 × 70 inches",
-      year: 2024,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748891/Boeing_thom1l.jpg",
-    },
-    {
       id: 9,
       title: "Radar",
       medium: "Oil on canvas",
@@ -109,6 +217,24 @@ export default function Home() {
       dimensions: "80 × 72 inches",
       year: 2024,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748893/HanoiSaigonParis_uxcp9c.jpg",
+    },
+    {
+      id: 11,
+      
+      title: "Tiếng Việt(Vietnamese)",
+      medium: "Oil on wood panels",
+      dimensions: "5.4ft x 7.3 ft x 7/8",
+      year: 2024,
+      image: "https://3gudmi3d2n.ucarecd.net/9e279404-b45d-4742-a121-b3dc8d035dc1/TiengViet(Vietnamese).jpg",
+    },
+    {
+      id: 11,
+      
+      title: "Napalm Bombs",
+      medium: "Acrylic, Oil, Colored Pencils, Collage, and Colored Frog Tape on Wood Panel",
+      dimensions: "64\"x38\"x2\" (162.5cm x 96.5cm x 5cm)",
+      year: 2024,
+      image: "https://3gudmi3d2n.ucarecd.net/e0ec3498-3d43-4e56-9843-3ba4e371d9cf/Painting1.jpg",
     },
     {
       id: 12,
@@ -224,14 +350,14 @@ export default function Home() {
     },
   ]
 
-  const currentArtwork = artworks[currentIndex]
+  const currentArtwork = selectedArtworks[currentIndex]
 
   const nextArtwork = () => {
-    setCurrentIndex((prev) => (prev + 1) % artworks.length)
+    setCurrentIndex((prev) => (prev + 1) % selectedArtworks.length)
   }
 
   const prevArtwork = () => {
-    setCurrentIndex((prev) => (prev - 1 + artworks.length) % artworks.length)
+    setCurrentIndex((prev) => (prev - 1 + selectedArtworks.length) % selectedArtworks.length)
   }
 
   const goToArtwork = (index: number) => {
@@ -246,15 +372,15 @@ export default function Home() {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") {
-        setCurrentIndex((prev) => (prev - 1 + artworks.length) % artworks.length)
+        setCurrentIndex((prev) => (prev - 1 + selectedArtworks.length) % selectedArtworks.length)
       }
       if (e.key === "ArrowRight") {
-        setCurrentIndex((prev) => (prev + 1) % artworks.length)
+        setCurrentIndex((prev) => (prev + 1) % selectedArtworks.length)
       }
     }
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [artworks.length])
+  }, [selectedArtworks.length])
 
   if (!mounted) {
     return null
@@ -327,7 +453,7 @@ export default function Home() {
           {/* Counter bottom right */}
           <div className="text-right">
             <p className="text-[10px] md:text-xs text-neutral-600 dark:text-neutral-400">
-              {currentIndex + 1} / {artworks.length}
+              {currentIndex + 1} / {selectedArtworks.length}
             </p>
           </div>
         </div>
