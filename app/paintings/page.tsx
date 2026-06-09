@@ -36,7 +36,7 @@ function PaintingsContent() {
   const allArtworks = [
     {
       id: 101,
-      title: "Mai Châu (Hòa Bình)",
+      title: "Early Summer",
       medium: "oil, acrylic, and collage on wood",
       dimensions: "50x50cm",
       year: 2026,
@@ -84,7 +84,7 @@ function PaintingsContent() {
     },
     {
       id: 107,
-      title: "Early spring",
+      title: "Late spring",
       medium: "oil, acrylic, and collage on wood",
       dimensions: "46x61cm",
       year: 2026,

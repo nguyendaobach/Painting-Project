@@ -13,31 +13,23 @@ export default function Home() {
 
   // Navigation items ordered from left to right (1-6)
   const navigationItems = [
-    { label: "Selected Works", href: "/selected-works", id: "selected" },
+    // { label: "Selected Works", href: "/selected-works", id: "selected" },
     { label: "Paintings", href: "/paintings", id: "paintings" },
     { label: "Sculptures", href: "/sculptures", id: "sculptures" },
     { label: "Archives", href: "/archives", id: "archives" },
     { label: "About", href: "/about", id: "about" },
-    { label: "Contact", href: "/contact", id: "contact" },
+    // { label: "Contact", href: "/contact", id: "contact" },
   ]
 
   // Selected works to display on homepage
   const selectedArtworks = [
     {
       id: 101,
-      title: "Mai Châu (Hòa Bình)",
+      title: "Early Summer",
       medium: "oil, acrylic, and collage on wood",
       dimensions: "50x50cm",
       year: 2026,
       image: "https://3gudmi3d2n.ucarecd.net/01b71099-d0d2-4282-a03f-9bb8fffe47ee/4Finalcopy.png",
-    },
-    {
-      id: 102,
-      title: "Untitle",
-      medium: "Oil, acrylic, and fabric on canvas",
-      dimensions: "60 x 81cm",
-      year: 2026,
-      image: "https://3gudmi3d2n.ucarecd.net/fd8a2771-e502-417a-bc4f-03dc09c5f385/7nenfreal.png",
     },
     {
       id: 103,
@@ -47,37 +39,45 @@ export default function Home() {
       year: 2026,
       image: "https://3gudmi3d2n.ucarecd.net/9ef9f6af-60c0-4886-8d87-c38ea340f25c/2nenreal.png",
     },
-    {
-      id: 104,
-      title: "Early spring",
-      medium: "oil, acrylic, and collage on wood",
-      dimensions: "46x61cm",
-      year: 2026,
-      image: "https://3gudmi3d2n.ucarecd.net/31fca27e-2b70-4706-b978-284cc3d4f7b8/6final.png",
-    },
+    // {
+    //   id: 104,
+    //   title: "Untitle",
+    //   medium: "oil, acrylic, and collage on wood",
+    //   dimensions: "46x61cm",
+    //   year: 2026,
+    //   image: "https://3gudmi3d2n.ucarecd.net/31fca27e-2b70-4706-b978-284cc3d4f7b8/6final.png",
+    // },
     {
       id: 105,
-      title: "Early spring",
+      title: "Early Spring",
       medium: "oil, acrylic, and collage on wood",
       dimensions: "46x61cm",
       year: 2026,
       image: "https://3gudmi3d2n.ucarecd.net/cf60515f-7f19-464b-a3d8-191308956ede/Final3nenreal.png",
     },
-    {
-      id: 106,
-      title: "Late Spring",
-      medium: "Oil, acrylic, and collage on wood",
-      dimensions: "46x61cm",
-      year: 2026,
-      image: "https://3gudmi3d2n.ucarecd.net/91162681-c7fd-4a36-b835-5188e9db3980/5nenreal.png",
-    },
+    // {
+    //   id: 106,
+    //   title: "Late Spring",
+    //   medium: "Oil, acrylic, and collage on wood",
+    //   dimensions: "46x61cm",
+    //   year: 2026,
+    //   image: "https://3gudmi3d2n.ucarecd.net/91162681-c7fd-4a36-b835-5188e9db3980/5nenreal.png",
+    // },
     {
       id: 107,
-      title: "Early spring",
+      title: "Late Spring",
       medium: "oil, acrylic, and collage on wood",
       dimensions: "46x61cm",
       year: 2026,
       image: "https://3gudmi3d2n.ucarecd.net/a24bb26e-4e35-4d03-a249-4aec32b9a7ba/FinalUpIG.png",
+    },
+    {
+      id: 3,
+      title: "Brise-soleil",
+      medium: "Sculptures",
+      dimensions: "82 × 74 inches",
+      year: 2025,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748875/006_trqdvi.jpg",
     },
     {
       id: 1,
@@ -86,6 +86,15 @@ export default function Home() {
       dimensions: "84 × 76 inches",
       year: 2025,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748875/009_vxftes.jpg",
+    }
+    , {
+      id: 11,
+
+      title: "Napalm Bombs",
+      medium: "Acrylic, Oil, Colored Pencils, Collage, and Colored Frog Tape on Wood Panel",
+      dimensions: "64\"x38\"x2\" (162.5cm x 96.5cm x 5cm)",
+      year: 2024,
+      image: "https://3gudmi3d2n.ucarecd.net/e0ec3498-3d43-4e56-9843-3ba4e371d9cf/Painting1.jpg",
     },
     {
       id: 8,
@@ -94,21 +103,13 @@ export default function Home() {
       dimensions: "s",
       year: 2024,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748891/Boeing_thom1l.jpg",
-    },{
-      id: 11,
-      
-      title: "Napalm Bombs",
-      medium: "Acrylic, Oil, Colored Pencils, Collage, and Colored Frog Tape on Wood Panel",
-      dimensions: "64\"x38\"x2\" (162.5cm x 96.5cm x 5cm)",
-      year: 2024,
-      image: "https://3gudmi3d2n.ucarecd.net/e0ec3498-3d43-4e56-9843-3ba4e371d9cf/Painting1.jpg",
-    },
+    }
   ]
 
   const artworks = [
     {
       id: 101,
-      title: "Mai Châu (Hòa Bình)",
+      title: "Early Summer",
       medium: "oil, acrylic, and collage on wood",
       dimensions: "50x50cm",
       year: 2026,
@@ -132,6 +133,14 @@ export default function Home() {
     },
     {
       id: 104,
+      title: "Late spring",
+      medium: "oil, acrylic, and collage on wood",
+      dimensions: "46x61cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/a24bb26e-4e35-4d03-a249-4aec32b9a7ba/FinalUpIG.png",
+    },
+    {
+      id: 104,
       title: "Early spring",
       medium: "oil, acrylic, and collage on wood",
       dimensions: "46x61cm",
@@ -140,23 +149,23 @@ export default function Home() {
     },
     {
       id: 105,
-      title: "Early spring",
+      title: "Early Spring",
       medium: "oil, acrylic, and collage on wood",
       dimensions: "46x61cm",
       year: 2026,
       image: "https://3gudmi3d2n.ucarecd.net/cf60515f-7f19-464b-a3d8-191308956ede/Final3nenreal.png",
     },
-    {
-      id: 106,
-      title: "Late Spring",
-      medium: "Oil, acrylic, and collage on wood",
-      dimensions: "46x61cm",
-      year: 2026,
-      image: "https://3gudmi3d2n.ucarecd.net/91162681-c7fd-4a36-b835-5188e9db3980/5nenreal.png",
-    },
+    // {
+    //   id: 106,
+    //   title: "Late Spring",
+    //   medium: "Oil, acrylic, and collage on wood",
+    //   dimensions: "46x61cm",
+    //   year: 2026,
+    //   image: "https://3gudmi3d2n.ucarecd.net/91162681-c7fd-4a36-b835-5188e9db3980/5nenreal.png",
+    // },
     {
       id: 107,
-      title: "Early spring",
+      title: "Late spring",
       medium: "oil, acrylic, and collage on wood",
       dimensions: "46x61cm",
       year: 2026,
@@ -220,7 +229,7 @@ export default function Home() {
     },
     {
       id: 11,
-      
+
       title: "Tiếng Việt(Vietnamese)",
       medium: "Oil on wood panels",
       dimensions: "5.4ft x 7.3 ft x 7/8",
@@ -229,7 +238,7 @@ export default function Home() {
     },
     {
       id: 11,
-      
+
       title: "Napalm Bombs",
       medium: "Acrylic, Oil, Colored Pencils, Collage, and Colored Frog Tape on Wood Panel",
       dimensions: "64\"x38\"x2\" (162.5cm x 96.5cm x 5cm)",
@@ -398,7 +407,7 @@ export default function Home() {
                 Minh Doan
               </h1>
             </Link>
-            
+
             {/* Center: Navigation - scrollable on mobile */}
             <nav className="flex items-center gap-1 overflow-x-auto scrollbar-hide max-w-[50vw] md:max-w-none">
               {navigationItems.map((item) => (
@@ -411,7 +420,7 @@ export default function Home() {
                 </Link>
               ))}
             </nav>
-            
+
             {/* Right: Theme toggle */}
             <button
               onClick={toggleTheme}
@@ -511,7 +520,7 @@ export default function Home() {
                 <img
                   src={selectedImage.image}
                   alt={selectedImage.title}
-                  className="w-full h-auto rounded-lg"
+                  className="w-auto max-h-[80vh] object-contain rounded-lg mx-auto"
                 />
               </div>
 
