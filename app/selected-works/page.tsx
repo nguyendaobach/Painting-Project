@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { ArrowLeft, Moon, Sun } from "lucide-react"
+import { ArrowLeft, Moon, Sun, X } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
 
 export default function SelectedWorksPage() {
   const [mounted, setMounted] = useState(false)
+  const [selectedImage, setSelectedImage] = useState<typeof selectedWorks[0] | null>(null)
   const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
@@ -19,123 +20,213 @@ export default function SelectedWorksPage() {
 
   const selectedWorks = [
     {
-      id: 1,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748875/009_vxftes.jpg",
-      title: "Brise-soleil",
-      year: 2025,
+      id: 101,
+      title: "Early Summer",
+      medium: "oil, acrylic, and collage on wood",
+      dimensions: "50x50cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/01b71099-d0d2-4282-a03f-9bb8fffe47ee/4Finalcopy.png",
     },
     {
-      id: 2,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748875/062_jd4xye.jpg",
+      id: 103,
+      title: "Late Summer",
+      medium: "Oil, and acrylic on canvas",
+      dimensions: "54 x 65cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/9ef9f6af-60c0-4886-8d87-c38ea340f25c/2nenreal.png",
+    },
+    {
+      id: 1,
       title: "Brise-soleil",
+      medium: "Sculptures",
+      dimensions: "84 × 76 inches",
       year: 2025,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748875/009_vxftes.jpg",
     },
     {
       id: 3,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748895/Oral_History_and_Written_History_vdxb2v.jpg",
-      title: "Oral History and Written History",
+      title: "Brise-soleil",
+      medium: "Sculptures",
+      dimensions: "82 × 74 inches",
+      year: 2025,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748875/006_trqdvi.jpg",
+    },
+    {
+      id: 9,
+      title: "Radar",
+      medium: "Oil on canvas",
+      dimensions: "76 × 68 inches",
       year: 2024,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748892/Radar_rcm5ce.jpg",
     },
     {
-      id: 4,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748888/Linebacker_aozveh.jpg",
-      title: "Linebacker",
+      id: 10,
+      title: "Linebacker 1972",
+      medium: "Oil on canvas",
+      dimensions: "82 × 74 inches",
+      year: 2024,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748892/Linebacker1972_damofk.jpg",
+    },
+    {
+      id: 11,
+      title: "Hanoi Saigon Paris",
+      medium: "Oil on canvas",
+      dimensions: "80 × 72 inches",
+      year: 2024,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748893/HanoiSaigonParis_uxcp9c.jpg",
+    },
+    {
+      id: 112,
+      title: "Napalm Bombs",
+      medium: "Acrylic, Oil, Colored Pencils, Collage, and Colored Frog Tape on Wood Panel",
+      dimensions: "64\"x38\"x2\" (162.5cm x 96.5cm x 5cm)",
+      year: 2024,
+      image: "https://3gudmi3d2n.ucarecd.net/e0ec3498-3d43-4e56-9843-3ba4e371d9cf/Painting1.jpg",
+    },
+    {
+      id: 13,
+      title: "Paris 1973",
+      medium: "Oil on canvas",
+      dimensions: "76 × 64 inches",
       year: 2023,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748888/Paris_1973_gzj6jb.jpg",
     },
     {
-      id: 5,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748877/My_Hometown_vy79w4.jpg",
-      title: "My Hometown",
+      id: 14,
+      title: "Bamboo",
+      medium: "Oil on canvas",
+      dimensions: "80 × 72 inches",
+      year: 2023,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748887/Bamboo_z3btzb.jpg",
+    },
+    {
+      id: 24,
+      title: "Bathroom",
+      medium: "Pencil, water color, and gouache on paper",
+      dimensions: "20 x 16 inches",
       year: 2022,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1767021123/Bathroom_fz2ajg.jpg",
+    },
+    {
+      id: 25,
+      title: "Desk",
+      medium: "Pencil, water color, and gouache on paper",
+      dimensions: "20 x 16 inches",
+      year: 2022,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1767021124/Desk_csm5fg.jpg",
     },
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-stone-100 dark:from-slate-950 dark:to-slate-900 text-black dark:text-white transition-colors duration-500">
-      {/* Header */}
-      <header className="border-b border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-950/50 backdrop-blur-md">
-        <div className="container mx-auto px-6 lg:px-12 py-6 flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <Link
-              href="/"
-              className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors group"
-            >
-              <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-              <span className="text-sm font-medium">Back</span>
-            </Link>
-            <h1 className="text-2xl md:text-3xl font-light tracking-tight">
-              Selected Works
-            </h1>
-          </div>
-          
-          <button
-            onClick={toggleTheme}
-            className="p-3 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-all duration-300 hover:scale-110"
-            aria-label="Toggle theme"
-          >
-            {theme === "light" ? (
-              <Moon size={22} className="text-slate-700" />
-            ) : (
-              <Sun size={22} className="text-slate-300" />
-            )}
-          </button>
-        </div>
-      </header>
+    <>
+      <div className="min-h-screen bg-white dark:bg-neutral-950 text-black dark:text-white transition-colors duration-500">
+        {/* Header */}
+        <header className="border-b border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950">
+          <div className="container mx-auto px-6 lg:px-12 py-6">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-6">
+                <Link
+                  href="/"
+                  className="flex items-center gap-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors group"
+                >
+                  <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+                  <span className="text-sm font-medium">Back</span>
+                </Link>
+                <h1 className="text-2xl md:text-3xl font-light tracking-tight">
+                  Selected Works
+                </h1>
+              </div>
 
-      {/* Main Content */}
-      <main className="container mx-auto px-6 lg:px-12 py-12 md:py-16">
-        <div className="max-w-7xl mx-auto">
-          {/* Grid of Selected Works */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {selectedWorks.map((work, index) => (
-              <Link
-                key={work.id}
-                href={`/paintings?year=${work.year}`}
-                className="group relative aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
-                style={{
-                  animationDelay: `${index * 100}ms`,
-                  animation: mounted ? "fadeInUp 0.6s ease-out forwards" : "none",
-                  opacity: mounted ? 1 : 0,
-                }}
+              <button
+                onClick={toggleTheme}
+                className="p-3 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300"
+                aria-label="Toggle theme"
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10 opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-                <img
-                  src={work.image}
-                  alt={work.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                  <p className="text-sm opacity-80 mb-1">{work.year}</p>
-                  <h3 className="text-xl font-light">{work.title}</h3>
-                </div>
-                
-                {/* Hover overlay effect */}
-                <div className="absolute inset-0 border-2 border-white/0 group-hover:border-white/20 rounded-xl transition-all duration-500 z-20" />
-              </Link>
-            ))}
+                {theme === "light" ? (
+                  <Moon size={20} className="text-neutral-700" />
+                ) : (
+                  <Sun size={20} className="text-neutral-300" />
+                )}
+              </button>
+            </div>
           </div>
+        </header>
 
-          {/* Bottom spacing */}
-          <div className="mt-16 text-center">
-            <p className="text-slate-500 dark:text-slate-400 text-sm">
-              Click on any work to explore more from that year
-            </p>
+        {/* Main Content */}
+        <main className="container mx-auto px-6 lg:px-12 py-12">
+          <div className="max-w-7xl mx-auto">
+            {/* Masonry Grid */}
+            <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+              {selectedWorks.map((artwork) => (
+                <div
+                  key={artwork.id}
+                  className="break-inside-avoid"
+                >
+                  <div
+                    className="group cursor-pointer"
+                    onClick={() => setSelectedImage(artwork)}
+                  >
+                    <div className="relative overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-900">
+                      <img
+                        src={artwork.image}
+                        alt={artwork.title}
+                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                    </div>
+                    <div className="mt-2 px-1">
+                      <p className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
+                        {artwork.title}
+                      </p>
+                      <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
+                        {artwork.year} • {artwork.medium}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </main>
+      </div>
+
+      {/* Fullscreen Image Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 bg-white dark:bg-neutral-950 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-4 right-4 p-2 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 text-neutral-900 dark:text-white transition-colors z-10"
+            aria-label="Close"
+          >
+            <X size={24} />
+          </button>
+
+          <div className="max-w-7xl max-h-full flex flex-col items-center justify-center gap-6">
+            <img
+              src={selectedImage.image}
+              alt={selectedImage.title}
+              className="max-w-full max-h-[80vh] w-auto h-auto object-contain shadow-2xl rounded-sm"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <div className="text-center text-neutral-900 dark:text-white max-w-2xl px-4" onClick={(e) => e.stopPropagation()}>
+              <h3 className="text-2xl font-light mb-2">{selectedImage.title}</h3>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                {selectedImage.medium}
+              </p>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                {selectedImage.dimensions}
+              </p>
+              <p className="text-sm text-neutral-500 dark:text-neutral-500 mt-2">
+                {selectedImage.year}
+              </p>
+            </div>
           </div>
         </div>
-      </main>
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
-    </div>
+      )}
+    </>
   )
 }

@@ -13,12 +13,12 @@ export default function Home() {
 
   // Navigation items ordered from left to right (1-6)
   const navigationItems = [
-    // { label: "Selected Works", href: "/selected-works", id: "selected" },
+     { label: "Selected Works", href: "/selected-works", id: "selected" },
     { label: "Paintings", href: "/paintings", id: "paintings" },
     { label: "Sculptures", href: "/sculptures", id: "sculptures" },
     { label: "Archives", href: "/archives", id: "archives" },
     { label: "About", href: "/about", id: "about" },
-    // { label: "Contact", href: "/contact", id: "contact" },
+    { label: "Contact", href: "https://www.instagram.com/m1nhhhhhhhh/", id: "contact" },
   ]
 
   // Selected works to display on homepage
@@ -88,7 +88,7 @@ export default function Home() {
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748875/009_vxftes.jpg",
     }
     , {
-      id: 11,
+      id: 112,
 
       title: "Napalm Bombs",
       medium: "Acrylic, Oil, Colored Pencils, Collage, and Colored Frog Tape on Wood Panel",
@@ -140,7 +140,7 @@ export default function Home() {
       image: "https://3gudmi3d2n.ucarecd.net/a24bb26e-4e35-4d03-a249-4aec32b9a7ba/FinalUpIG.png",
     },
     {
-      id: 104,
+      id: 1041,
       title: "Early spring",
       medium: "oil, acrylic, and collage on wood",
       dimensions: "46x61cm",
@@ -228,7 +228,7 @@ export default function Home() {
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748893/HanoiSaigonParis_uxcp9c.jpg",
     },
     {
-      id: 11,
+      id: 111,
 
       title: "Tiếng Việt(Vietnamese)",
       medium: "Oil on wood panels",
@@ -237,7 +237,7 @@ export default function Home() {
       image: "https://3gudmi3d2n.ucarecd.net/9e279404-b45d-4742-a121-b3dc8d035dc1/TiengViet(Vietnamese).jpg",
     },
     {
-      id: 11,
+      id: 112,
 
       title: "Napalm Bombs",
       medium: "Acrylic, Oil, Colored Pencils, Collage, and Colored Frog Tape on Wood Panel",
@@ -411,13 +411,25 @@ export default function Home() {
             {/* Center: Navigation - scrollable on mobile */}
             <nav className="flex items-center gap-1 overflow-x-auto scrollbar-hide max-w-[50vw] md:max-w-none">
               {navigationItems.map((item) => (
-                <Link
-                  key={item.id}
-                  href={item.href}
-                  className="px-2 md:px-4 py-2 text-xs md:text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/50 rounded-lg transition-all duration-200 whitespace-nowrap"
-                >
-                  {item.label}
-                </Link>
+                item.href.startsWith("http") ? (
+                  <a
+                    key={item.id}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-2 md:px-4 py-2 text-xs md:text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/50 rounded-lg transition-all duration-200 whitespace-nowrap"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.id}
+                    href={item.href}
+                    className="px-2 md:px-4 py-2 text-xs md:text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/50 rounded-lg transition-all duration-200 whitespace-nowrap"
+                  >
+                    {item.label}
+                  </Link>
+                )
               ))}
             </nav>
 

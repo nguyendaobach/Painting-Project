@@ -28,7 +28,7 @@ function PaintingsContent() {
 
   const years = [
     { year: "2026", count: 7 },
-    { year: "2024", count: 6 },
+    { year: "2024", count: 8 },
     { year: "2023", count: 5 },
     { year: "2022", count: 6 },
   ]
@@ -147,7 +147,7 @@ function PaintingsContent() {
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1767021112/g_vte462.png",
     },
     {
-      id: 11,
+      id: 111,
       
       title: "Tiếng Việt(Vietnamese)",
       medium: "Oil on wood panels",
@@ -156,7 +156,7 @@ function PaintingsContent() {
       image: "https://3gudmi3d2n.ucarecd.net/9e279404-b45d-4742-a121-b3dc8d035dc1/TiengViet(Vietnamese).jpg",
     },
     {
-      id: 11,
+      id: 112,
       
       title: "Napalm Bombs",
       medium: "Acrylic, Oil, Colored Pencils, Collage, and Colored Frog Tape on Wood Panel",
