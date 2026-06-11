@@ -18,7 +18,7 @@ export default function Home() {
     { label: "Sculptures", href: "/sculptures", id: "sculptures" },
     { label: "Archives", href: "/archives", id: "archives" },
     { label: "About", href: "/about", id: "about" },
-    { label: "Contact", href: "https://www.instagram.com/m1nhhhhhhhh/", id: "contact" },
+    { label: "Contact", href: "/contact", id: "contact" },
   ]
 
   // Selected works to display on homepage
