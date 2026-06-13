@@ -94,7 +94,7 @@ export default function ContactPage() {
                   <div>
                     <p className="font-medium text-slate-800 dark:text-slate-200 mb-1">Studio</p>
                     <p className="text-slate-600 dark:text-slate-400">
-                      Hanoi, Vietnam
+                      Ho Chi Minh city, Vietnam
                     </p>
                   </div>
                 </div>
