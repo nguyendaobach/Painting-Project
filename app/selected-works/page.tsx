@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Moon, Sun, ChevronLeft, ChevronRight, X, LayoutGrid, GalleryHorizontal } from "lucide-react"
+import { Moon, Sun, ChevronLeft, ChevronRight, X, LayoutGrid, GalleryHorizontal, Menu } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
 
 export default function SelectedWorksPage() {
@@ -10,6 +10,7 @@ export default function SelectedWorksPage() {
   const [viewMode, setViewMode] = useState<'carousel' | 'grid'>('carousel')
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedImage, setSelectedImage] = useState<typeof selectedWorks[0] | null>(null)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
@@ -68,7 +69,7 @@ export default function SelectedWorksPage() {
     {
       id: 10,
       title: "Linebacker 1972",
-      medium: "Oil and collage on wood panels",
+      medium: "Oil on canvas",
       dimensions: "82 × 74 inches",
       year: 2024,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748892/Linebacker1972_damofk.jpg",
@@ -92,7 +93,7 @@ export default function SelectedWorksPage() {
     {
       id: 9,
       title: "Radar",
-      medium: "OOil and collage on wood panels",
+      medium: "Oil on canvas",
       dimensions: "76 × 68 inches",
       year: 2024,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748892/Radar_rcm5ce.jpg",
@@ -105,7 +106,7 @@ export default function SelectedWorksPage() {
     { label: "Sculptures", href: "/sculptures", id: "sculptures" },
     { label: "Archives", href: "/archives", id: "archives" },
     { label: "About", href: "/about", id: "about" },
-    { label: "Contact", href: "/contact", id: "contact" },
+    { label: "Contact", href: "https://www.instagram.com/m1nhhhhhhhh/", id: "contact" },
   ]
 
   const currentArtwork = selectedWorks[currentIndex]
@@ -120,7 +121,7 @@ export default function SelectedWorksPage() {
 
   // Keyboard navigation for carousel
   useEffect(() => {
-    if (viewMode !== 'carousel') return
+    if (viewMode !== 'carousel' || isMobileMenuOpen) return
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") {
@@ -132,7 +133,19 @@ export default function SelectedWorksPage() {
     }
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [selectedWorks.length, viewMode])
+  }, [selectedWorks.length, viewMode, isMobileMenuOpen])
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [isMobileMenuOpen])
 
   if (!mounted) {
     return null
@@ -140,19 +153,19 @@ export default function SelectedWorksPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-neutral-950 text-black dark:text-white transition-colors duration-500 overflow-hidden">
-      {/* Main Header with Navigation */}
-      <header className="border-b border-neutral-200/50 dark:border-neutral-800/50 bg-white dark:bg-neutral-950">
+      {/* Main Header */}
+      <header className="border-b border-neutral-200/50 dark:border-neutral-800/50 bg-white/95 dark:bg-neutral-950/95 backdrop-blur-md relative z-50">
         <div className="container mx-auto px-4 md:px-6 lg:px-12 py-4">
           <div className="flex items-center justify-between">
             {/* Left: Artist name */}
-            <Link href="/" className="group">
-              <h1 className="text-base md:text-lg lg:text-xl font-light tracking-tight group-hover:text-neutral-600 dark:group-hover:text-neutral-400 transition-colors">
+            <Link href="/" className="group z-50" onClick={() => setIsMobileMenuOpen(false)}>
+              <h1 className="text-lg md:text-xl font-light tracking-tight group-hover:text-neutral-600 dark:group-hover:text-neutral-400 transition-colors">
                 Minh Doan
               </h1>
             </Link>
 
-            {/* Center: Navigation - scrollable on mobile */}
-            <nav className="flex items-center gap-1 overflow-x-auto scrollbar-hide max-w-[40vw] md:max-w-none">
+            {/* Center: Navigation - Desktop Only */}
+            <nav className="hidden md:flex items-center gap-1">
               {navigationItems.map((item) => (
                 item.href.startsWith("http") ? (
                   <a
@@ -160,7 +173,7 @@ export default function SelectedWorksPage() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-2 md:px-4 py-2 text-xs md:text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/50 rounded-lg transition-all duration-200 whitespace-nowrap"
+                    className="px-3 lg:px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/50 rounded-lg transition-all duration-200"
                   >
                     {item.label}
                   </a>
@@ -168,7 +181,7 @@ export default function SelectedWorksPage() {
                   <Link
                     key={item.id}
                     href={item.href}
-                    className={`px-2 md:px-4 py-2 text-xs md:text-sm font-medium rounded-lg transition-all duration-200 whitespace-nowrap ${
+                    className={`px-3 lg:px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
                       item.id === 'selected' 
                         ? 'text-black dark:text-white bg-neutral-100 dark:bg-neutral-800/50' 
                         : 'text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white hover:bg-neutral-50 dark:hover:bg-neutral-800/30'
@@ -180,10 +193,10 @@ export default function SelectedWorksPage() {
               ))}
             </nav>
 
-            {/* Right: View Toggle & Theme */}
-            <div className="flex items-center gap-2 md:gap-4">
+            {/* Right: Controls & Mobile Toggle */}
+            <div className="flex items-center gap-2 z-50">
               {/* View Toggle */}
-              <div className="flex bg-neutral-100 dark:bg-neutral-800/80 rounded-lg p-1">
+              <div className="flex bg-neutral-100 dark:bg-neutral-800/80 rounded-lg p-1 mr-1">
                 <button
                   onClick={() => setViewMode('carousel')}
                   className={`p-1.5 md:p-2 rounded-md transition-all ${
@@ -208,29 +221,88 @@ export default function SelectedWorksPage() {
                 </button>
               </div>
 
-              <div className="w-px h-6 bg-neutral-200 dark:bg-neutral-800"></div>
+              <div className="w-px h-5 bg-neutral-200 dark:bg-neutral-800 hidden md:block"></div>
 
+              {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
-                className="p-2 md:p-2.5 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300 flex-shrink-0"
+                className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300"
                 aria-label="Toggle theme"
               >
                 {theme === "light" ? (
-                  <Moon size={16} className="md:w-[18px] md:h-[18px] text-neutral-700" />
+                  <Moon size={18} className="text-neutral-700" />
                 ) : (
-                  <Sun size={16} className="md:w-[18px] md:h-[18px] text-neutral-300" />
+                  <Sun size={18} className="text-neutral-300" />
                 )}
+              </button>
+
+              {/* Mobile Menu Toggle */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden p-2 ml-1 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-neutral-700 dark:text-neutral-300"
+                aria-label="Toggle mobile menu"
+              >
+                {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
             </div>
           </div>
         </div>
       </header>
 
+      {/* Mobile Menu Overlay */}
+      <div 
+        className={`fixed inset-0 bg-white dark:bg-neutral-950 z-40 md:hidden transition-transform duration-500 ease-in-out flex flex-col pt-24 pb-8 px-6 ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <nav className="flex flex-col space-y-6 text-2xl font-light">
+          {navigationItems.map((item, index) => (
+            <div 
+              key={item.id}
+              className="transform transition-all duration-500 delay-100"
+              style={{ 
+                opacity: isMobileMenuOpen ? 1 : 0,
+                transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+                transitionDelay: `${index * 50}ms`
+              }}
+            >
+              {item.href.startsWith("http") ? (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  href={item.href}
+                  className={`block transition-colors ${
+                    item.id === 'selected'
+                      ? 'text-black dark:text-white font-normal'
+                      : 'text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white'
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              )}
+            </div>
+          ))}
+        </nav>
+        
+        <div className="mt-auto pt-8 border-t border-neutral-100 dark:border-neutral-900">
+          <p className="text-sm text-neutral-500">© {new Date().getFullYear()} Minh Doan</p>
+        </div>
+      </div>
+
       {/* Main Content */}
       {viewMode === 'carousel' ? (
         <main className="flex-1 flex flex-col items-center justify-center relative bg-neutral-50 dark:bg-black px-4 md:px-8 py-4 md:py-6 overflow-hidden">
           {/* Large centered image - fixed height container */}
-          <div className="relative flex items-center justify-center h-[60vh] md:h-[75vh] mb-4 md:mb-6 w-full">
+          <div className="relative flex items-center justify-center h-[65vh] md:h-[75vh] mb-6 md:mb-6 w-full">
             <img
               key={currentIndex}
               src={currentArtwork?.image || "/placeholder.svg"}
@@ -241,44 +313,44 @@ export default function SelectedWorksPage() {
           </div>
 
           {/* Info section below image - fixed position */}
-          <div className="w-full max-w-4xl flex items-end justify-between px-2 md:px-4">
+          <div className="w-full max-w-4xl flex items-end justify-between px-2 md:px-4 z-10">
             {/* Info bottom left */}
             <div className="text-left min-h-[50px] md:min-h-[60px]">
-              <h2 className="text-xs md:text-sm lg:text-base font-medium mb-0.5">{currentArtwork?.title}</h2>
-              <p className="text-[10px] md:text-xs text-neutral-600 dark:text-neutral-400">{currentArtwork?.medium}</p>
-              <p className="text-[10px] md:text-xs text-neutral-600 dark:text-neutral-400">{currentArtwork?.year}</p>
+              <h2 className="text-sm md:text-base font-medium mb-0.5">{currentArtwork?.title}</h2>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400">{currentArtwork?.medium}</p>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400">{currentArtwork?.year}</p>
             </div>
 
             {/* Counter bottom right */}
             <div className="text-right">
-              <p className="text-[10px] md:text-xs text-neutral-600 dark:text-neutral-400">
+              <p className="text-xs font-medium text-neutral-600 dark:text-neutral-400">
                 {currentIndex + 1} / {selectedWorks.length}
               </p>
             </div>
           </div>
 
-          {/* Navigation Arrows - Simple */}
+          {/* Navigation Arrows - Styled for mobile & desktop */}
           <button
             onClick={prevArtwork}
-            className="absolute left-2 md:left-4 lg:left-8 top-1/2 -translate-y-1/2 p-2 md:p-3 hover:bg-neutral-100 dark:hover:bg-neutral-900 rounded-full transition-colors"
+            className="absolute left-2 md:left-4 lg:left-8 top-1/2 -translate-y-1/2 p-2.5 md:p-3 bg-white/50 dark:bg-black/50 md:bg-transparent md:dark:bg-transparent hover:bg-neutral-100 dark:hover:bg-neutral-900 rounded-full transition-colors backdrop-blur-sm md:backdrop-blur-none"
             aria-label="Previous artwork"
           >
-            <ChevronLeft size={20} className="md:w-6 md:h-6 text-neutral-700 dark:text-neutral-300" />
+            <ChevronLeft size={24} className="md:w-6 md:h-6 text-neutral-800 dark:text-neutral-200" />
           </button>
 
           <button
             onClick={nextArtwork}
-            className="absolute right-2 md:right-4 lg:right-8 top-1/2 -translate-y-1/2 p-2 md:p-3 hover:bg-neutral-100 dark:hover:bg-neutral-900 rounded-full transition-colors"
+            className="absolute right-2 md:right-4 lg:right-8 top-1/2 -translate-y-1/2 p-2.5 md:p-3 bg-white/50 dark:bg-black/50 md:bg-transparent md:dark:bg-transparent hover:bg-neutral-100 dark:hover:bg-neutral-900 rounded-full transition-colors backdrop-blur-sm md:backdrop-blur-none"
             aria-label="Next artwork"
           >
-            <ChevronRight size={20} className="md:w-6 md:h-6 text-neutral-700 dark:text-neutral-300" />
+            <ChevronRight size={24} className="md:w-6 md:h-6 text-neutral-800 dark:text-neutral-200" />
           </button>
         </main>
       ) : (
-        <main className="flex-1 overflow-y-auto bg-white dark:bg-neutral-950 px-6 lg:px-12 py-12">
+        <main className="flex-1 overflow-y-auto bg-white dark:bg-neutral-950 px-4 md:px-6 lg:px-12 py-8 md:py-12">
           <div className="max-w-7xl mx-auto">
-            {/* Masonry Grid */}
-            <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+            {/* Masonry Grid - Mobile optimized columns */}
+            <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-6 space-y-4 md:space-y-6">
               {selectedWorks.map((artwork) => (
                 <div
                   key={artwork.id}
@@ -288,21 +360,21 @@ export default function SelectedWorksPage() {
                     className="group cursor-pointer"
                     onClick={() => setSelectedImage(artwork)}
                   >
-                    <div className="relative overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-900">
+                    <div className="relative overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-900 shadow-sm hover:shadow-md transition-shadow">
                       <img
                         src={artwork.image}
                         alt={artwork.title}
-                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                         loading="lazy"
                       />
                       {/* Overlay */}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                     </div>
-                    <div className="mt-2 px-1">
+                    <div className="mt-3 px-1">
                       <p className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
                         {artwork.title}
                       </p>
-                      <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
+                      <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 line-clamp-1">
                         {artwork.year} • {artwork.medium}
                       </p>
                     </div>
@@ -324,51 +396,49 @@ export default function SelectedWorksPage() {
           }
         }
         .animate-fadeIn {
-          animation: fadeIn 0.3s ease-out;
+          animation: fadeIn 0.4s ease-out;
         }
       `}</style>
 
       {/* Modal for full image view */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-[60] bg-white/95 dark:bg-black/95 backdrop-blur-md flex flex-col items-center justify-center p-4 md:p-8"
           onClick={() => setSelectedImage(null)}
         >
           <button
             onClick={() => setSelectedImage(null)}
-            className="absolute top-6 right-6 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-10"
+            className="absolute top-4 right-4 md:top-6 md:right-6 p-2 md:p-3 rounded-full bg-neutral-100 dark:bg-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors z-10 text-neutral-900 dark:text-white"
             aria-label="Close"
           >
-            <X size={24} className="text-white" />
+            <X size={20} className="md:w-6 md:h-6" />
           </button>
 
-          <div className="max-w-6xl w-full" onClick={(e) => e.stopPropagation()}>
-            <div className="grid md:grid-cols-[1fr,300px] gap-8 items-start">
-              {/* Image */}
-              <div className="relative flex justify-center">
-                <img
-                  src={selectedImage.image}
-                  alt={selectedImage.title}
-                  className="max-h-[80vh] w-auto object-contain rounded-lg shadow-2xl"
-                />
-              </div>
+          <div className="max-w-6xl w-full flex flex-col md:flex-row gap-6 md:gap-12 items-center" onClick={(e) => e.stopPropagation()}>
+            {/* Image */}
+            <div className="relative flex justify-center flex-1 w-full max-h-[60vh] md:max-h-[85vh]">
+              <img
+                src={selectedImage.image}
+                alt={selectedImage.title}
+                className="max-h-[60vh] md:max-h-[85vh] w-auto object-contain rounded-md shadow-2xl"
+              />
+            </div>
 
-              {/* Details */}
-              <div className="text-white space-y-4 self-center">
-                <div>
-                  <h2 className="text-3xl font-light mb-2">{selectedImage.title}</h2>
-                  <p className="text-neutral-400">{selectedImage.year}</p>
-                </div>
-                <div className="space-y-2 text-sm">
-                  <p>
-                    <span className="text-neutral-500">Medium:</span>{" "}
-                    <span className="text-neutral-300">{selectedImage.medium}</span>
-                  </p>
-                  <p>
-                    <span className="text-neutral-500">Dimensions:</span>{" "}
-                    <span className="text-neutral-300">{selectedImage.dimensions}</span>
-                  </p>
-                </div>
+            {/* Details */}
+            <div className="text-neutral-900 dark:text-white space-y-3 md:space-y-4 md:w-80 w-full text-center md:text-left px-4 md:px-0">
+              <div>
+                <h2 className="text-2xl md:text-4xl font-light mb-1 md:mb-2">{selectedImage.title}</h2>
+                <p className="text-neutral-500 dark:text-neutral-400 text-sm md:text-base">{selectedImage.year}</p>
+              </div>
+              <div className="space-y-1 md:space-y-2 text-xs md:text-sm">
+                <p className="leading-relaxed">
+                  <span className="text-neutral-500 block md:inline">Medium:</span>{" "}
+                  <span className="text-neutral-700 dark:text-neutral-300">{selectedImage.medium}</span>
+                </p>
+                <p>
+                  <span className="text-neutral-500 block md:inline">Dimensions:</span>{" "}
+                  <span className="text-neutral-700 dark:text-neutral-300">{selectedImage.dimensions}</span>
+                </p>
               </div>
             </div>
           </div>
