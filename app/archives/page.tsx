@@ -21,12 +21,18 @@ export default function ArchivesPage() {
   const archivedWorks = [
     {
       id: 1,
-      title: "Archive - NFT 4",
+      title: "Mohonk Mountain",
+      medium: "oil on canvas",
+      dimensions: '12x20"',
+      year: 2022,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1781349998/NFT4_fextw7.jpg",
     },
     {
       id: 2,
-      title: "Archive - NFT 5",
+      title: "Spring",
+      medium: "oil on canvas",
+      dimensions: '36x48"',
+      year: 2022,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1781350006/NFT5_pcxfs3.jpg",
     }
   ]
@@ -88,6 +94,14 @@ export default function ArchivesPage() {
                       {/* Overlay */}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                     </div>
+                    <div className="mt-3 px-1 text-center">
+                      <p className="text-sm md:text-base font-medium text-neutral-900 dark:text-neutral-100">
+                        {artwork.title}
+                      </p>
+                      <p className="text-xs md:text-sm text-neutral-500 dark:text-neutral-400 mt-1">
+                        {artwork.year} • {artwork.medium}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -114,9 +128,21 @@ export default function ArchivesPage() {
             <img
               src={selectedImage.image}
               alt={selectedImage.title}
-              className="max-w-full max-h-[85vh] w-auto h-auto object-contain shadow-2xl rounded-sm"
+              className="max-w-full max-h-[80vh] w-auto h-auto object-contain shadow-2xl rounded-sm"
               onClick={(e) => e.stopPropagation()}
             />
+            <div className="text-center text-neutral-900 dark:text-white max-w-2xl px-4" onClick={(e) => e.stopPropagation()}>
+              <h3 className="text-2xl font-light mb-2">{selectedImage.title}</h3>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                {selectedImage.medium}
+              </p>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                {selectedImage.dimensions}
+              </p>
+              <p className="text-sm text-neutral-500 dark:text-neutral-500 mt-2">
+                {selectedImage.year}
+              </p>
+            </div>
           </div>
         </div>
       )}

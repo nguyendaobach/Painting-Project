@@ -117,7 +117,7 @@ function PaintingsContent() {
     {
       id: 9,
       title: "Radar",
-      medium: "Oil on canvas",
+      medium: "Oil and collage on wood panels",
       dimensions: "76 × 68 inches",
       year: 2024,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748892/Radar_rcm5ce.jpg",
@@ -125,7 +125,7 @@ function PaintingsContent() {
     {
       id: 10,
       title: "Linebacker 1972",
-      medium: "Oil on canvas",
+      medium: "Oil and collage on wood panels",
       dimensions: "82 × 74 inches",
       year: 2024,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748892/Linebacker1972_damofk.jpg",
