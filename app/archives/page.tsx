@@ -21,19 +21,35 @@ export default function ArchivesPage() {
   const archivedWorks = [
     {
       id: 1,
-      title: "Mohonk Mountain",
+      title: "Spring",
       medium: "oil on canvas",
-      dimensions: '12x20"',
+      dimensions: '36x48"',
       year: 2022,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1781349998/NFT4_fextw7.jpg",
     },
     {
       id: 2,
-      title: "Spring",
+      title: "Mohonk Mountain",
       medium: "oil on canvas",
-      dimensions: '36x48"',
+      dimensions: '12x20"',
       year: 2022,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1781350006/NFT5_pcxfs3.jpg",
+    },
+    {
+      id: 3,
+      title: "Untitle",
+      medium: "Oil on Canvas",
+      dimensions: '12"x16"',
+      year: 2022,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782059613/Untitle_Oil_on_Canvas_12_x16__2022_se0kun.jpg",
+    },
+    {
+      id: 4,
+      title: "A little Thicket",
+      medium: "Ink on Paper",
+      dimensions: '12"x16"',
+      year: 2022,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782059611/A_little_Thicket_Ink_on_Paper_12_x16__2022_ckxiba.jpg",
     }
   ]
 
@@ -100,6 +116,9 @@ export default function ArchivesPage() {
                       </p>
                       <p className="text-xs md:text-sm text-neutral-500 dark:text-neutral-400 mt-1">
                         {artwork.year} • {artwork.medium}
+                      </p>
+                      <p className="text-xs md:text-sm text-neutral-500 dark:text-neutral-400 mt-0.5">
+                        {artwork.dimensions}
                       </p>
                     </div>
                   </div>

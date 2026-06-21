@@ -35,6 +35,14 @@ export default function SelectedWorksPage() {
       image: "https://3gudmi3d2n.ucarecd.net/cf60515f-7f19-464b-a3d8-191308956ede/Final3nenreal.png",
     },
     {
+      id: 107,
+      title: "Late spring",
+      medium: "oil, acrylic, and collage on wood",
+      dimensions: "46x61cm",
+      year: 2026,
+      image: "https://3gudmi3d2n.ucarecd.net/a24bb26e-4e35-4d03-a249-4aec32b9a7ba/FinalUpIG.png",
+    },
+    {
       id: 103,
       title: "Late Summer",
       medium: "Oil, and acrylic on canvas",
@@ -318,6 +326,7 @@ export default function SelectedWorksPage() {
             <div className="text-left min-h-[50px] md:min-h-[60px]">
               <h2 className="text-sm md:text-base font-medium mb-0.5">{currentArtwork?.title}</h2>
               <p className="text-xs text-neutral-600 dark:text-neutral-400">{currentArtwork?.medium}</p>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400">{currentArtwork?.dimensions}</p>
               <p className="text-xs text-neutral-600 dark:text-neutral-400">{currentArtwork?.year}</p>
             </div>
 
@@ -374,8 +383,11 @@ export default function SelectedWorksPage() {
                       <p className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
                         {artwork.title}
                       </p>
-                      <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 line-clamp-1">
+                      <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
                         {artwork.year} • {artwork.medium}
+                      </p>
+                      <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
+                        {artwork.dimensions}
                       </p>
                     </div>
                   </div>

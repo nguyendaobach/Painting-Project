@@ -29,8 +29,8 @@ function PaintingsContent() {
   const years = [
     { year: "2026", count: 7 },
     { year: "2024", count: 8 },
-    { year: "2023", count: 5 },
-    { year: "2022", count: 6 },
+    { year: "2023", count: 10 },
+    { year: "2022", count: 7 },
   ]
 
   const allArtworks = [
@@ -139,14 +139,6 @@ function PaintingsContent() {
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1762748893/HanoiSaigonParis_uxcp9c.jpg",
     },
     {
-      id: 12,
-      title: "Dutch landscape",
-      medium: "Oil on canvas",
-      dimensions: "9 × 12 inches",
-      year: 2023,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1767021112/g_vte462.png",
-    },
-    {
       id: 111,
       
       title: "Tiếng Việt(Vietnamese)",
@@ -163,6 +155,14 @@ function PaintingsContent() {
       dimensions: "64\"x38\"x2\" (162.5cm x 96.5cm x 5cm)",
       year: 2024,
       image: "https://3gudmi3d2n.ucarecd.net/e0ec3498-3d43-4e56-9843-3ba4e371d9cf/Painting1.jpg",
+    },
+    {
+      id: 12,
+      title: "Dutch landscape",
+      medium: "Oil on canvas",
+      dimensions: "9 × 12 inches",
+      year: 2023,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1767021112/g_vte462.png",
     },
     {
       id: 13,
@@ -195,6 +195,46 @@ function PaintingsContent() {
       dimensions: "15 × 25 inches",
       year: 2023,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1767021115/up_hinh_ig_cp8b0k.jpg",
+    },
+    {
+      id: 17,
+      title: "A little thicket, Edition 1",
+      medium: "lithography and collage on paper",
+      dimensions: "25cmx30cm",
+      year: 2023,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782059478/A_little_thicket_Edition_1_lithography_and_collage_on_paper_25cmx30cm_2023_sr44pp.jpg",
+    },
+    {
+      id: 18,
+      title: "A little thicket, Edition 3",
+      medium: "lithography and collage on paper",
+      dimensions: "25cmx30cm",
+      year: 2023,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782059479/A_little_thicket_Edition_3_lithography_and_collage_on_paper_25cmx30cm_2023.JPG_n5ct73.jpg",
+    },
+    {
+      id: 19,
+      title: "A little thicket, Edition 2",
+      medium: "lithography and collage on paper",
+      dimensions: "25cmx30cm",
+      year: 2023,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782059480/A_little_thicket_Edition_2_lithography_and_collage_on_paper_25cmx30cm_2023.JPG_rw9cug.jpg",
+    },
+    {
+      id: 20,
+      title: "Dutch landscape",
+      medium: "Oil on canvas",
+      dimensions: '9"x12"',
+      year: 2023,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782059481/Dutch_landscape_Oil_on_canvas_9_12_inches_2023_vovqjl.jpg",
+    },
+    {
+      id: 21,
+      title: "Dresden",
+      medium: "woodblock print",
+      dimensions: "13cmx16cm",
+      year: 2023,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782059481/Dresden_woodblock_print_13cmx16cm_2023_bzvput.jpg",
     },
     {
       id: 24,
@@ -243,6 +283,14 @@ function PaintingsContent() {
       dimensions: "20 x 16 inches",
       year: 2022,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1767021122/z4241283384530_8b7d5007bb727b10f271ea13e792ea68_o7v3mu.jpg",
+    },
+    {
+      id: 30,
+      title: "My Kitchen",
+      medium: "oil on canvas",
+      dimensions: '12"x16"',
+      year: 2022,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782059353/My_Kitchen_oil_on_canvas_12_x16__2022_cpgyan.jpg",
     },
   ]
 
@@ -337,8 +385,11 @@ function PaintingsContent() {
                     <p className="text-xs font-medium text-neutral-900 dark:text-neutral-100 line-clamp-1">
                       {artwork.title}
                     </p>
-                    <p className="text-[10px] text-neutral-500 dark:text-neutral-400">
-                      {artwork.year}
+                    <p className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-1">
+                      {artwork.year} • {artwork.medium}
+                    </p>
+                    <p className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-0.5">
+                      {artwork.dimensions}
                     </p>
                   </div>
                 </div>
