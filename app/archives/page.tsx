@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { ArrowLeft, Moon, Sun, X } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
+import Footer from "@/components/footer"
 
 export default function ArchivesPage() {
   const [mounted, setMounted] = useState(false)
@@ -55,7 +56,7 @@ export default function ArchivesPage() {
 
   return (
     <>
-      <div className="min-h-screen bg-white dark:bg-neutral-950 text-black dark:text-white transition-colors duration-500">
+      <div className="min-h-screen flex flex-col bg-white dark:bg-neutral-950 text-black dark:text-white transition-colors duration-500">
         {/* Header */}
         <header className="border-b border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950">
           <div className="container mx-auto px-6 lg:px-12 py-6">
@@ -89,7 +90,7 @@ export default function ArchivesPage() {
         </header>
 
         {/* Main Content */}
-        <main className="container mx-auto px-6 lg:px-12 py-12">
+        <main className="flex-grow container mx-auto px-6 lg:px-12 py-12">
           <div className="max-w-7xl mx-auto">
             <div className="columns-1 md:columns-2 gap-6 space-y-6">
               {archivedWorks.map((artwork) => (
@@ -127,6 +128,7 @@ export default function ArchivesPage() {
             </div>
           </div>
         </main>
+        <Footer />
       </div>
 
       {/* Fullscreen Image Modal */}

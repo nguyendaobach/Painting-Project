@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Minh Doan",
   description:
     "Visual artist exploring the intersection of abstraction, color, and geometric forms.",
+  authors: [{ name: "Minh Doan" }],
+  creator: "Minh Doan",
+  publisher: "Minh Doan",
   openGraph: {
     title: "Minh Doan",
     description:

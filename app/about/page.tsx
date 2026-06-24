@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { ArrowLeft, Moon, Sun, Mail, MapPin, Instagram } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
+import Footer from "@/components/footer"
 
 export default function AboutPage() {
   const [mounted, setMounted] = useState(false)
@@ -18,7 +19,7 @@ export default function AboutPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-stone-100 dark:from-slate-950 dark:to-slate-900 text-black dark:text-white transition-colors duration-500">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-stone-100 dark:from-slate-950 dark:to-slate-900 text-black dark:text-white transition-colors duration-500">
       <header className="border-b border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-950/50 backdrop-blur-md">
         <div className="container mx-auto px-6 lg:px-12 py-6 flex items-center justify-between">
           <div className="flex items-center gap-6">
@@ -48,7 +49,7 @@ export default function AboutPage() {
         </div>
       </header>
 
-      <main className="container mx-auto px-6 lg:px-12 py-16 md:py-24">
+      <main className="flex-grow container mx-auto px-6 lg:px-12 py-16 md:py-24">
         <div className="max-w-3xl mx-auto">
           <div className="space-y-12">
             {/* Bio Section */}
@@ -77,6 +78,7 @@ export default function AboutPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   )
 }

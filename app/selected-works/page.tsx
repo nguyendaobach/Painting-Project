@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Moon, Sun, ChevronLeft, ChevronRight, X, LayoutGrid, GalleryHorizontal, Menu } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
+import Footer from "@/components/footer"
 
 export default function SelectedWorksPage() {
   const [mounted, setMounted] = useState(false)
@@ -301,8 +302,15 @@ export default function SelectedWorksPage() {
           ))}
         </nav>
         
-        <div className="mt-auto pt-8 border-t border-neutral-100 dark:border-neutral-900">
+        <div className="mt-auto pt-8 border-t border-neutral-100 dark:border-neutral-900 flex flex-col gap-2">
           <p className="text-sm text-neutral-500">© {new Date().getFullYear()} Minh Doan</p>
+          <Link
+            href="/terms"
+            className="text-xs text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200 transition-colors underline"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Terms & Copyright
+          </Link>
         </div>
       </div>
 
@@ -356,8 +364,8 @@ export default function SelectedWorksPage() {
           </button>
         </main>
       ) : (
-        <main className="flex-1 overflow-y-auto bg-white dark:bg-neutral-950 px-4 md:px-6 lg:px-12 py-8 md:py-12">
-          <div className="max-w-7xl mx-auto">
+        <main className="flex-1 overflow-y-auto bg-white dark:bg-neutral-950 px-4 md:px-6 lg:px-12 pt-8 md:pt-12 pb-0 flex flex-col justify-between">
+          <div className="max-w-7xl mx-auto w-full mb-12">
             {/* Masonry Grid - Mobile optimized columns */}
             <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-6 space-y-4 md:space-y-6">
               {selectedWorks.map((artwork) => (
@@ -395,6 +403,7 @@ export default function SelectedWorksPage() {
               ))}
             </div>
           </div>
+          <Footer />
         </main>
       )}
 
