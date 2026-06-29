@@ -41,7 +41,7 @@ function PaintingsContent() {
       medium: "oil, acrylic, and collage on wood",
       dimensions: "50x50cm",
       year: 2026,
-      image: "https://3gudmi3d2n.ucarecd.net/01b71099-d0d2-4282-a03f-9bb8fffe47ee/4Finalcopy.png",
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782705090/Screenshot_2026-06-29_104940_koz5h0.png",
     },
     {
       id: 102,
@@ -49,7 +49,7 @@ function PaintingsContent() {
       medium: "Oil, acrylic, and fabric on canvas",
       dimensions: "60 x 81cm",
       year: 2026,
-      image: "https://3gudmi3d2n.ucarecd.net/fd8a2771-e502-417a-bc4f-03dc09c5f385/7nenfreal.png",
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782706225/Screenshot_2026-06-29_110949_ju31po.png",
     },
     {
       id: 103,
@@ -57,15 +57,15 @@ function PaintingsContent() {
       medium: "Oil, and acrylic on canvas",
       dimensions: "54 x 65cm",
       year: 2026,
-      image: "https://3gudmi3d2n.ucarecd.net/9ef9f6af-60c0-4886-8d87-c38ea340f25c/2nenreal.png",
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782705331/Screenshot_2026-06-29_105511_vcuog4.png",
     },
     {
       id: 104,
       title: "Untitle",
-      medium: "Oil, acrylic, and fabric on canvas",
-      dimensions: "54 x 65 cm",
+      medium: "Oil, and acrylic on canvas",
+      dimensions: "54x65cm",
       year: 2026,
-      image: "https://3gudmi3d2n.ucarecd.net/31fca27e-2b70-4706-b978-284cc3d4f7b8/6final.png",
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782714913/Screenshot_2026-06-29_133450_uv8n75.png",
     },
     {
       id: 105,
@@ -73,7 +73,7 @@ function PaintingsContent() {
       medium: "oil, acrylic, and collage on wood",
       dimensions: "46x61cm",
       year: 2026,
-      image: "https://3gudmi3d2n.ucarecd.net/cf60515f-7f19-464b-a3d8-191308956ede/Final3nenreal.png",
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782705472/Screenshot_2026-06-29_105625_bycvpk.png",
     },
     {
       id: 106,
@@ -81,7 +81,7 @@ function PaintingsContent() {
       medium: "Oil, and acrylic on canvas",
       dimensions: "54x65cm",
       year: 2026,
-      image: "https://3gudmi3d2n.ucarecd.net/91162681-c7fd-4a36-b835-5188e9db3980/5nenreal.png",
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782706465/Screenshot_2026-06-29_111403_sbhmwp.png",
     },
     {
       id: 107,
@@ -89,7 +89,7 @@ function PaintingsContent() {
       medium: "oil, acrylic, and collage on wood",
       dimensions: "46x61cm",
       year: 2026,
-      image: "https://3gudmi3d2n.ucarecd.net/a24bb26e-4e35-4d03-a249-4aec32b9a7ba/FinalUpIG.png",
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782705613/Screenshot_2026-06-29_105951_owcqix.png",
     },
     {
       id: 6,
@@ -146,7 +146,7 @@ function PaintingsContent() {
       medium: "Oil on wood panels",
       dimensions: "5.4ft x 7.3 ft x 7/8",
       year: 2024,
-      image: "https://3gudmi3d2n.ucarecd.net/9e279404-b45d-4742-a121-b3dc8d035dc1/TiengViet(Vietnamese).jpg",
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782705795/Screenshot_2026-06-29_110246_l8jlqb.png",
     },
     {
       id: 112,
@@ -155,7 +155,7 @@ function PaintingsContent() {
       medium: "Acrylic, Oil, Colored Pencils, Collage, and Colored Frog Tape on Wood Panel",
       dimensions: "64\"x38\"x2\" (162.5cm x 96.5cm x 5cm)",
       year: 2024,
-      image: "https://3gudmi3d2n.ucarecd.net/e0ec3498-3d43-4e56-9843-3ba4e371d9cf/Painting1.jpg",
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782715078/Screenshot_2026-06-29_133737_qxt5wc.png",
     },
     {
       id: 12,

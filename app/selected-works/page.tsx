@@ -25,7 +25,7 @@ export default function SelectedWorksPage() {
       medium: "oil, acrylic, and collage on wood",
       dimensions: "50x50cm",
       year: 2026,
-      image: "https://3gudmi3d2n.ucarecd.net/01b71099-d0d2-4282-a03f-9bb8fffe47ee/4Finalcopy.png",
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782705090/Screenshot_2026-06-29_104940_koz5h0.png",
     },
     {
       id: 105,
@@ -33,7 +33,7 @@ export default function SelectedWorksPage() {
       medium: "oil, acrylic, and collage on wood",
       dimensions: "46x61cm",
       year: 2026,
-      image: "https://3gudmi3d2n.ucarecd.net/cf60515f-7f19-464b-a3d8-191308956ede/Final3nenreal.png",
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782705472/Screenshot_2026-06-29_105625_bycvpk.png",
     },
     {
       id: 107,
@@ -41,7 +41,7 @@ export default function SelectedWorksPage() {
       medium: "oil, acrylic, and collage on wood",
       dimensions: "46x61cm",
       year: 2026,
-      image: "https://3gudmi3d2n.ucarecd.net/a24bb26e-4e35-4d03-a249-4aec32b9a7ba/FinalUpIG.png",
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782705613/Screenshot_2026-06-29_105951_owcqix.png",
     },
     {
       id: 103,
@@ -49,7 +49,7 @@ export default function SelectedWorksPage() {
       medium: "Oil, and acrylic on canvas",
       dimensions: "54 x 65cm",
       year: 2026,
-      image: "https://3gudmi3d2n.ucarecd.net/9ef9f6af-60c0-4886-8d87-c38ea340f25c/2nenreal.png",
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782705331/Screenshot_2026-06-29_105511_vcuog4.png",
     },
     {
       id: 1,
@@ -73,7 +73,7 @@ export default function SelectedWorksPage() {
       medium: "Acrylic, Oil, Colored Pencils, Collage, and Colored Frog Tape on Wood Panel",
       dimensions: "64\"x38\"x2\" (162.5cm x 96.5cm x 5cm)",
       year: 2024,
-      image: "https://3gudmi3d2n.ucarecd.net/e0ec3498-3d43-4e56-9843-3ba4e371d9cf/Painting1.jpg",
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1782715078/Screenshot_2026-06-29_133737_qxt5wc.png",
     },
     {
       id: 10,
@@ -161,9 +161,9 @@ export default function SelectedWorksPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-neutral-950 text-black dark:text-white transition-colors duration-500 overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-neutral-950 text-black dark:text-white transition-colors duration-500">
       {/* Main Header */}
-      <header className="border-b border-neutral-200/50 dark:border-neutral-800/50 bg-white/95 dark:bg-neutral-950/95 backdrop-blur-md relative z-50">
+      <header className="border-b border-neutral-200/50 dark:border-neutral-800/50 bg-white/95 dark:bg-neutral-950/95 backdrop-blur-md sticky top-0 z-50">
         <div className="container mx-auto px-4 md:px-6 lg:px-12 py-4">
           <div className="flex items-center justify-between">
             {/* Left: Artist name */}
@@ -316,7 +316,7 @@ export default function SelectedWorksPage() {
 
       {/* Main Content */}
       {viewMode === 'carousel' ? (
-        <main className="flex-1 flex flex-col items-center justify-center relative bg-neutral-50 dark:bg-black px-4 md:px-8 py-4 md:py-6 overflow-hidden">
+        <main className="flex-1 flex flex-col items-center justify-center relative bg-neutral-50 dark:bg-black px-4 md:px-8 py-4 md:py-6">
           {/* Large centered image - fixed height container */}
           <div className="relative flex items-center justify-center h-[65vh] md:h-[75vh] mb-6 md:mb-6 w-full">
             <img
@@ -364,8 +364,8 @@ export default function SelectedWorksPage() {
           </button>
         </main>
       ) : (
-        <main className="flex-1 overflow-y-auto bg-white dark:bg-neutral-950 px-4 md:px-6 lg:px-12 pt-8 md:pt-12 pb-0 flex flex-col justify-between">
-          <div className="max-w-7xl mx-auto w-full mb-12">
+        <main className="flex-1 overflow-y-auto bg-white dark:bg-neutral-950 px-4 md:px-6 lg:px-12 pt-8 md:pt-12 pb-0 flex flex-col">
+          <div className="max-w-7xl mx-auto w-full">
             {/* Masonry Grid - Mobile optimized columns */}
             <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-6 space-y-4 md:space-y-6">
               {selectedWorks.map((artwork) => (
