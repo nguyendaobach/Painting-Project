@@ -114,8 +114,7 @@ export default function SelectedWorksPage() {
     { label: "Paintings", href: "/paintings", id: "paintings" },
     { label: "Sculptures", href: "/sculptures", id: "sculptures" },
     { label: "Archives", href: "/archives", id: "archives" },
-    { label: "About", href: "/about", id: "about" },
-    { label: "Contact", href: "https://www.instagram.com/m1nhhhhhhhh/", id: "contact" },
+    { label: "About & Contact", href: "/about", id: "about" },
   ]
 
   const currentArtwork = selectedWorks[currentIndex]
