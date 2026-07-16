@@ -75,7 +75,7 @@ export default function AboutPage() {
               <span className="text-sm font-medium">Back</span>
             </Link>
             <h1 className="text-2xl md:text-3xl font-light tracking-tight">
-              About & Contact
+              About
             </h1>
           </div>
           

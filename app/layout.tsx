@@ -10,15 +10,11 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Minh Doan",
-  description:
-    "Visual artist exploring the intersection of abstraction, color, and geometric forms.",
   authors: [{ name: "Minh Doan" }],
   creator: "Minh Doan",
   publisher: "Minh Doan",
   openGraph: {
     title: "Minh Doan",
-    description:
-      "Visual artist exploring the intersection of abstraction, color, and geometric forms.",
     url: "https://painting-project-theta.vercel.app",
     siteName: "Minh Doan Portfolio",
     locale: "en_US",
@@ -27,8 +23,6 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Minh Doan",
-    description:
-      "Visual artist exploring the intersection of abstraction, color, and geometric forms.",
   },
   robots: {
     index: true,

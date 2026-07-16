@@ -114,7 +114,7 @@ export default function SelectedWorksPage() {
     { label: "Paintings", href: "/paintings", id: "paintings" },
     { label: "Sculptures", href: "/sculptures", id: "sculptures" },
     { label: "Archives", href: "/archives", id: "archives" },
-    { label: "About & Contact", href: "/about", id: "about" },
+    { label: "About", href: "/about", id: "about" },
   ]
 
   const currentArtwork = selectedWorks[currentIndex]
