@@ -31,7 +31,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         from: "Portfolio Contact <onboarding@resend.dev>",
-        to: "nguyendaobach@gmail.com",
+        to: "abcngguyen@gmail.com",
         reply_to: email,
         subject: subject ? `${subject} - from ${name}` : `New Message from ${name} via Portfolio`,
         html: `
