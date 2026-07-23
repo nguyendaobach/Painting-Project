@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Minh Doan",
   },
+  verification: {
+    google: "9ZKGHf-mwiVjgvGZ5ZFOOTgq-7DJI48hK-tNU26KiCQ",
+  },
   robots: {
     index: true,
     follow: true,

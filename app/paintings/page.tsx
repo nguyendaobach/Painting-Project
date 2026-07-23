@@ -28,13 +28,37 @@ function PaintingsContent() {
   }
 
   const years = [
-    { year: "2026", count: 7 },
+    { year: "2026", count: 10 },
     { year: "2024", count: 8 },
     { year: "2023", count: 10 },
     { year: "2022", count: 7 },
   ]
 
   const allArtworks = [
+    {
+      id: 108,
+      title: "Untitle",
+      medium: "TBD",
+      dimensions: "TBD",
+      year: 2026,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1784822486/DSC06215upweb_brs4vq.jpg",
+    },
+    {
+      id: 109,
+      title: "Untitle",
+      medium: "TBD",
+      dimensions: "TBD",
+      year: 2026,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1784822486/DSC05940cropupweb_nz2otj.jpg",
+    },
+    {
+      id: 110,
+      title: "Untitle",
+      medium: "TBD",
+      dimensions: "TBD",
+      year: 2026,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1784822485/DSC06232upwebfinal_kfscbh.jpg",
+    },
     {
       id: 101,
       title: "Early Summer",
