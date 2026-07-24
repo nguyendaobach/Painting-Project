@@ -20,29 +20,22 @@ export default function SelectedWorksPage() {
 
   const selectedWorks = [
     {
-      id: 108,
-      title: "Untitle",
-      medium: "TBD",
-      dimensions: "TBD",
-      year: 2026,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1784822486/DSC06215upweb_brs4vq.jpg",
-    },
-    {
       id: 109,
-      title: "Untitle",
-      medium: "TBD",
-      dimensions: "TBD",
+      title: "Hybrid",
+      medium: "Oil, acrylic, and fabric on canvas",
+      dimensions: "60x81cm",
       year: 2026,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1784822486/DSC05940cropupweb_nz2otj.jpg",
     },
     {
       id: 110,
       title: "Untitle",
-      medium: "TBD",
-      dimensions: "TBD",
+      medium: "Oil, acrylic, and fabric on canvas",
+      dimensions: "54x65cm",
       year: 2026,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1784822485/DSC06232upwebfinal_kfscbh.jpg",
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1784883482/DSC06232cropupwebFINALmaudep_ohx0fh.jpg",
     },
+
     {
       id: 101,
       title: "Early Summer",

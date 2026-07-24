@@ -30,8 +30,8 @@ export async function POST(request: Request) {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        from: "Portfolio Contact <onboarding@resend.dev>",
-        to: "abcngguyen@gmail.com",
+        from: "Portfolio Contact <contact@minh-doan.com>",
+        to: "nguyendaobach@gmail.com",
         reply_to: email,
         subject: subject ? `${subject} - from ${name}` : `New Message from ${name} via Portfolio`,
         html: `
