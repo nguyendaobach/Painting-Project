@@ -57,7 +57,7 @@ function PaintingsContent() {
       medium: "Oil, acrylic, and fabric on canvas",
       dimensions: "54x65cm",
       year: 2026,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1784883482/DSC06232cropupwebFINALmaudep_ohx0fh.jpg",
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1784909988/DSC06232cropfinalupwebmaudep_umgfxl.jpg",
     },
     {
       id: 101,
