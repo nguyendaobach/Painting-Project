@@ -20,6 +20,14 @@ export default function SelectedWorksPage() {
 
   const selectedWorks = [
     {
+      id: 114,
+      title: "Up In The Air",
+      medium: "Fabric, Acrylic, and Oil on wood panels",
+      dimensions: "60x81cm",
+      year: 2026,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1785983850/DSC06322upwebfinal_wmocuf.jpg",
+    },
+    {
       id: 109,
       title: "Hybrid",
       medium: "Oil, acrylic, and fabric on canvas",

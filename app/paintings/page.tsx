@@ -28,13 +28,21 @@ function PaintingsContent() {
   }
 
   const years = [
-    { year: "2026", count: 10 },
+    { year: "2026", count: 11 },
     { year: "2024", count: 8 },
     { year: "2023", count: 10 },
     { year: "2022", count: 7 },
   ]
 
   const allArtworks = [
+    {
+      id: 114,
+      title: "Up In The Air",
+      medium: "Fabric, Acrylic, and Oil on wood panels",
+      dimensions: "60x81cm",
+      year: 2026,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1785983850/DSC06322upwebfinal_wmocuf.jpg",
+    },
     {
       id: 108,
       title: "Untitle",
