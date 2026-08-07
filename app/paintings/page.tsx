@@ -28,13 +28,29 @@ function PaintingsContent() {
   }
 
   const years = [
-    { year: "2026", count: 11 },
+    { year: "2026", count: 13 },
     { year: "2024", count: 8 },
     { year: "2023", count: 10 },
     { year: "2022", count: 7 },
   ]
 
   const allArtworks = [
+    {
+      id: 115,
+      title: "In Between Skies",
+      medium: "Fabric, Acrylic, and Oil on wood panels",
+      dimensions: "65x81cm",
+      year: 2026,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1786000826/DSC06276upwebfinal_qtb7lc.jpg",
+    },
+    {
+      id: 116,
+      title: "Untitle",
+      medium: "Fabric, Oil, and Acrylic on Canvas",
+      dimensions: "60x81cm",
+      year: 2026,
+      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1786000867/DSC06219upweb_bhdeok.jpg",
+    },
     {
       id: 114,
       title: "Up In The Air",
