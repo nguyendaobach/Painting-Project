@@ -27,14 +27,14 @@ export default function SelectedWorksPage() {
       year: 2026,
       image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1786000826/DSC06276upwebfinal_qtb7lc.jpg",
     },
-    {
-      id: 114,
-      title: "Up In The Air",
-      medium: "Fabric, Acrylic, and Oil on wood panels",
-      dimensions: "60x81cm",
-      year: 2026,
-      image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1785983850/DSC06322upwebfinal_wmocuf.jpg",
-    },
+    // {
+    //   id: 114,
+    //   title: "Up In The Air",
+    //   medium: "Fabric, Acrylic, and Oil on wood panels",
+    //   dimensions: "60x81cm",
+    //   year: 2026,
+    //   image: "https://res.cloudinary.com/dyjtvhscz/image/upload/v1785983850/DSC06322upwebfinal_wmocuf.jpg",
+    // },
     {
       id: 109,
       title: "Hybrid",
