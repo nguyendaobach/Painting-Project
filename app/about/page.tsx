@@ -102,10 +102,10 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-4 text-neutral-600 dark:text-neutral-400 leading-relaxed text-sm md:text-base">
               <p>
-                Minh Đoàn is a visual artist based in Ho Chi Minh City, Vietnam. He holds a Bachelor of Fine Arts from SUNY New Paltz. His research-driven practice investigates the intersections of the built environment, ecology, and collective memory, examining how industrialization, colonial modernism, and migration continue to shape Vietnamese cultural identity.
+                Minh Đoàn is a visual artist based in Ho Chi Minh City, Vietnam. He holds a Bachelor of Fine Arts from SUNY New Paltz. His research-driven practice investigates the intersections of the built environment, ecology, and collective memory, examining how industrialization and colonial modernism continue to shape Vietnamese cultural identity.
               </p>
               <p>
-                Operating at the intersection of painting and sculpture, Đoàn constructs complex, multi-layered sculptural paintings and installations. His recent works frequently address the “diasporic gaze,” utilizing architectural cutouts and structural voids to recreate the liminal spaces of transit. Visually synthesizing geometric patterns, recurring motifs, curvilinear forms, and gestural mark-making, Minh employs complex layering techniques to collapse linear time and perspective. These spatial interventions cast shadows and function as a "theatre of memory," capturing the tension between presence, absence, and the evolving concept of homeland.
+                Operating at the intersection of painting and sculpture, Đoàn constructs complex, multi-layered sculptural paintings and installations. His recent works utilize architectural cutouts and structural voids. Visually synthesizing geometric patterns, recurring motifs, curvilinear forms, and gestural mark-making, Minh employs complex layering techniques to collapse linear time and perspective. These spatial interventions cast shadows and function as a "theatre of memory," capturing the tension between presence and absence.
               </p>
             </div>
           </section>
